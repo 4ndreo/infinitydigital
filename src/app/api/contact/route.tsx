@@ -17,7 +17,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const options = {
     from: smtpEmail,
     to: smtpEmail,
-    subject: "New Form Submission",
+    subject: "Nuevo mensaje de contacto",
     html: emailHtml,
   };
 
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     // Send email using the transporter
     await transporter.sendMail(options);
   } catch (error) {
-    console.error("Failed to send email:", error);
+    console.error("Error al enviar mail:", error);
   }
   return new Response("OK");
 }
