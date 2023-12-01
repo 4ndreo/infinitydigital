@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css'
-
+import Script from 'next/script';
 import { Inter } from 'next/font/google'
 
 import Footer from '@/components/footer'
@@ -14,11 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="es">
-			<head><script src="https://unpkg.com/akar-icons-fonts"></script></head>
+			<head><Script src="https://unpkg.com/akar-icons-fonts" /></head>
 			<body className={inter.className}>
 				{children}
 				<Footer />
-				
 			</body>
 		</html>
 	)
