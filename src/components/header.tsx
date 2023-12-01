@@ -18,9 +18,9 @@ const Header = () => {
 				<nav className="md:ml-auto flex flex-wrap text-base text-white justify-center items-center content-center gap-10">
 					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#home'>Inicio</a>
 					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#servicios'>Servicios</a>
-					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#'>Contáctenos</a>
-					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#'>Proyectos</a>
-					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#'>Quienes Somos</a>
+					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#contacto'>Contáctenos</a>
+					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#proyectos'>Proyectos</a>
+					<a className="mr-5 hover:text-gray-200 hover:border-white hover:border-b-[1px]" href='#about'>Quienes Somos</a>
 				</nav>
 				<button className="h-[50px] inline-flex items-center bg-blue-200 bg-opacity-50 border-1 py-1 px-3 focus:outline-none hover:bg-blue-200 rounded text-base mt-4 md:mt-0">
 					<p className='z-40 text-white font-bold hover:text-black'>Cotiza tu proyecto</p>

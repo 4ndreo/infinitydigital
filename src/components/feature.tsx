@@ -2,7 +2,7 @@ import React from 'react'
 
 const Feature = () => {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font" id='proyectos'>
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
@@ -17,7 +17,7 @@ const Feature = () => {
         </div>
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
           <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-            <div className="w-full h-auto inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <div className="rotate-scale-up w-full h-auto inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
               <img src='\img\proyecto_1.jpg'/>
             </div>
             <div className="flex-grow">
@@ -44,7 +44,7 @@ const Feature = () => {
             </div>
           </div>
           <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-            <div className="w-full h-auto inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <div className="rotate-scale-up w-full h-auto inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
               <img src='\img\proyecto_1.jpg'/>
             </div>
             <div className="flex-grow">
@@ -71,7 +71,7 @@ const Feature = () => {
             </div>
           </div>
           <div className="p-4 md:w-1/3 flex flex-col text-center items-center">
-            <div className="w-full h-auto inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+            <div className="rotate-scale-up w-full h-auto inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
               <img src='\img\proyecto_1.jpg'/>
             </div>
             <div className="flex-grow">

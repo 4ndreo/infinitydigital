@@ -14,9 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="es">
+			<head><script src="https://unpkg.com/akar-icons-fonts"></script></head>
 			<body className={inter.className}>
 				{children}
 				<Footer />
+				
 			</body>
 		</html>
 	)

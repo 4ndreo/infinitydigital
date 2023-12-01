@@ -43,13 +43,13 @@ const ContactForm = () => {
       resetForm();
 
       // Show success message or redirect to a thank you page
-      console.log("Email sent successfully!");
+      console.log("El email se envio con éxito!");
     } catch (error) {
       // Handle error
-      console.error("Failed to send email:", error);
+      console.error("Error al enviar el email:", error);
     } finally {
       setSubmitting(false);
-      toast.success("Form submitted successfully!");
+      toast.success("Formulario completado con éxito!");
       setShowConfetti(true);
       setIsLoading(false);
     }
@@ -68,7 +68,7 @@ const ContactForm = () => {
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label className="leading-7 text-sm text-gray-600">
-                    Name
+                    Nombre
                   </label>
                   <Field
                     type="text"
@@ -104,7 +104,7 @@ const ContactForm = () => {
               <div className="p-2 w-full">
                 <div className="relative">
                   <label className="leading-7 text-sm text-gray-600">
-                    Message
+                    Mensaje
                   </label>
                   <Field
                     id="message"
@@ -126,6 +126,7 @@ const ContactForm = () => {
                 >
                   Enviar Mensaje
                 </button>
+                
               </div>
             </div>
           </div>
