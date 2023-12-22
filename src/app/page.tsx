@@ -5,6 +5,7 @@ import Content from '@/components/content'
 import Feature from '@/components/feature'
 import Contact from '@/components/contact'
 import Header from '@/components/header'
+import PricingCards from '@/components/pricing-cards'
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 				<HeroSection />
 			</div>
 			<Content />
+			<PricingCards />
 			<Contact />
 			<Feature />
 		</main>
