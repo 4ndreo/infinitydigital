@@ -9,13 +9,13 @@ import Header from '@/components/header'
 export default function Home() {
 	return (
 		<main>
-			<div className="bg-[url('/bg-image.jpg')] bg-no-repeat bg-center bg-cover h-screen opacity-90">
 				<Header />
+			<div className="bg-[url('/bg-image.jpg')] bg-no-repeat bg-center bg-cover h-screen opacity-90">
 				<HeroSection />
 			</div>
 			<Content />
-			<Contact />
 			<Feature />
+			<Contact />
 		</main>
 	)
 }
