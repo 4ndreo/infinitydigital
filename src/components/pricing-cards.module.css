@@ -1,0 +1,38 @@
+.bttn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    width: 288px;
+    height: 46px;
+    border-radius: 9px;
+    cursor: pointer;
+    background-color: #272A2AF2;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card {
+    width: 353px;
+    height: 606px;
+}
+
+.type {
+    margin-top: 46px;
+    color: #202020;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.title {
+    color: #272A2A;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(32, 32, 32, 0.35);
+    line-height: 1rem;
+}
