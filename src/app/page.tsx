@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import HeroSection from '@/components/hero-section'
+import Introduction from '@/components/introduction'
 import Content from '@/components/content'
 import Feature from '@/components/feature'
 import Contact from '@/components/contact'
@@ -14,7 +15,10 @@ export default function Home() {
 			<div className="bg-[url('/bg-image.jpg')] bg-no-repeat bg-center bg-cover h-screen opacity-90">
 				<HeroSection />
 			</div>
+			<div className="grey">
+			<Introduction />
 			<Content />
+			</div>
 			<PricingCards />
 			<Feature />
 			<Contact />
