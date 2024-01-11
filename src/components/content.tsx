@@ -14,9 +14,9 @@ const Content = () => {
       <div className="h-[70px]"></div>
       <div className=" w-full px-5 py-24 mx-auto">
         <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+          <h3 className={styles.title+" sm:text-3xl text-4xl tracking-tight font-extrabold mb-2"}>
             Servicios
-          </h1>
+          </h3>
         </div>
         <div className="block lg:flex flex-wrap justify-evenly">
 
@@ -29,7 +29,7 @@ const Content = () => {
             </CardHeader>
             <CardBody></CardBody>
             <CardFooter className="overflow-visible py-2 justify-center text-center">
-              <h4 className="font-bold text-large">Desarrollo Web</h4>
+              <h4 className={styles.cardTitle}>Desarrollo Web</h4>
             </CardFooter>
           </Card>
 
@@ -42,7 +42,7 @@ const Content = () => {
             </CardHeader>
             <CardBody></CardBody>
             <CardFooter className="overflow-visible py-2 justify-center text-center">
-              <h4 className="font-bold text-large">Desarrollo de APIs</h4>
+              <h4 className={styles.cardTitle}>Desarrollo de APIs</h4>
             </CardFooter>
           </Card>
 
@@ -55,7 +55,7 @@ const Content = () => {
             </CardHeader>
             <CardBody></CardBody>
             <CardFooter className="overflow-visible py-2 justify-center text-center">
-              <h4 className="font-bold text-large">Marketing Digital</h4>
+              <h4 className={styles.cardTitle}>Marketing Digital</h4>
             </CardFooter>
           </Card>
         </div>
