@@ -18,6 +18,8 @@
     position: relative;
     border-radius: 12px;
     max-width: 35%;
+    width: 307px;
+    height: 335px;
 }
 
 .cardBorder::before {
