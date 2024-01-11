@@ -18,14 +18,14 @@ const Content = () => {
             Servicios
           </h3>
         </div>
-        <div className="block lg:flex flex-wrap justify-evenly">
+        <div className="block lg:flex flex-wrap justify-evenly mx-24">
 
           <Card className={styles.cardBorder + " overflow-visible block"}>
 
             <CardHeader className="flex-col items-center">
             <Image
                 className="object-cover rounded-xl"
-                src={desarrolloImage} alt="Desarrollo web" width={150} height={150}
+                src={desarrolloImage} alt="Desarrollo web" width={132} height={132}
                 />              
             </CardHeader>
             <CardBody></CardBody>
