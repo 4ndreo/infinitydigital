@@ -3,7 +3,6 @@ import Image from 'next/image'
 import HeroSection from '@/components/hero-section'
 import Introduction from '@/components/introduction'
 import Content from '@/components/content'
-import Feature from '@/components/feature'
 import Contact from '@/components/contact'
 import Header from '@/components/header'
 import PricingCards from '@/components/pricing-cards'
@@ -20,7 +19,6 @@ export default function Home() {
 			<Content />
 			</div>
 			<PricingCards />
-			<Feature />
 			<Contact />
 		</main>
 	)

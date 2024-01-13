@@ -1,0 +1,42 @@
+.titleContainer {
+    height: 139px;
+    color: #272A2AF0;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    width: 550px;
+}
+
+/* .contactContainer {
+    width: 80%;
+    height: 404px;
+    position: relative;
+    display: flex;
+}
+
+.form {
+    border: solid red;
+    background-color: lightcoral;
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    right: 0;
+}
+
+.info {
+    border: solid blue;
+    background-color: lightcyan;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: 0;
+} */

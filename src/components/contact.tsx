@@ -1,29 +1,31 @@
+'use client';
 import React from "react";
 import ContactForm from "./form";
+import styles from '../components/contact.module.css';
 
 const Contact = () => {
   return (
-    <section className="text-gray-600 body-font" id="contacto">
-      <div className="h-[100px]"></div>
+    <section className="body-font mt-10" id="contacto">
       <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Contáctenos
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Nuestra prioridad es darle una mejor experiencia de usuario, por eso estamos a su disposición para cualquier consulta o sugerencia.
+        <div className={styles.titleContainer+" flex flex-col text-center mb-16"}>
+          <h3 className={styles.title+" sm:text-3xl mb-4"}>
+            Contáctanos
+          </h3>
+          <p className={styles.text+" lg:w-2/3 mx-auto"}>
+          Para ponerse en contacto con nosotros, complete el formulario disponible aquí o utilice cualquiera de los siguientes datos de contacto
           </p>
         </div>
-        <div className="lg:w-1/2 md:w-2/3 mx-auto">
+        <div className={styles.contactContainer}>
+          <div className={styles.info}></div>
+          <div className={styles.form}></div>
+        </div>
+        {/* <div className="lg:w-1/2 md:w-2/3 mx-auto">
           <div className="flex flex-wrap -m-2">
+            
             <ContactForm />
-            <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-              <a className="text-indigo-500">info.infinitydigital@gmail.com</a>
-              <p className="leading-normal my-5">
-                  --
-                <br />
-                --
-              </p>
+          </div>
+
+          <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
               <span className="inline-flex">
                 <a className="text-gray-500">
                   <svg
@@ -83,9 +85,10 @@ const Contact = () => {
                   </svg>
                 </a>
               </span>
-            </div>
           </div>
-        </div>
+
+        </div> */}
+        
       </div>
     </section>
   );

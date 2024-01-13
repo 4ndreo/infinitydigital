@@ -61,7 +61,6 @@ const Content = () => {
           </Card>
         </div>
       </div>
-      <div className="h-[200px]"></div>
     </section>
   );
 };
