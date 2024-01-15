@@ -2,61 +2,57 @@
 import React from 'react'
 import Link from 'next/link';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link as UILink, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
+import styles from '../components/header.module.css';
 
 import { useScrollPosition } from '@/hooks/useScrollPosition'
 const Header = () => {
 	const scrollPosition = useScrollPosition()
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+  const [isScroll0, setIsScroll0] = React.useState(true);
+  
 	const menuItems = [
-		{
-			name: "Inicio",
+    {
+      name: "Inicio",
 			path: "#home",
 		},
 		{
-			name: "Servicios",
+      name: "Servicios",
 			path: "#servicios",
 		},
 		{
-			name: "Proyectos",
-			path: "#proyectos",
+      name: "Empresa",
+			path: "#",
 		},
 		{
-			name: "Nosotros",
-			path: "#nosotros",
-		},
-		{
-			name: "Comienza ahora",
+      name: "Contacto",
 			path: "#contacto",
 		}
 	];
 
+  function handleScroll (e:any) {
+    console.log("scroll", e);
+    e !== 0 ? setIsScroll0(false) : setIsScroll0(true)
+  }
+
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll0 ? styles.transparent : styles.navbarDark}} isBlurred={!isScroll0}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-white">INFINITY DIGITAL</p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
 	  {menuItems.map((item, index) => (
-		index !== menuItems.length -1 ?
         <NavbarItem key={`${item.name}-${index}`}>
-			<UILink color="foreground" href={item.path}>
+			<UILink isBlock color="foreground" as={Link} href={item.path} className='text-white'>
 			{item.name}
 			</UILink>
-        </NavbarItem>
-		:
-        <NavbarItem key={`${item.name}-${index}`}>
-          <Button as={UILink} color="primary" href="#contacto" variant="flat">
-		  	Comienza ahora
-          </Button>
         </NavbarItem>
 
 		))}
@@ -77,8 +73,8 @@ const Header = () => {
           </NavbarMenuItem>
 			:
           <NavbarMenuItem key={`${item.name}-${index}`}>
-			<Button as={UILink} color="primary" href="#contacto" variant="flat" size="lg">
-		  	Comienza ahora
+			    <Button as={UILink} color="primary" href="#contacto" variant="flat" size="lg">
+		  	    Comienza ahora
           </Button>
           </NavbarMenuItem>
         ))}

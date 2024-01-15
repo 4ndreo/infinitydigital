@@ -1,11 +1,12 @@
 'use client';
 import React from "react";
 import ContactForm from "./form";
+import {Input, Textarea} from "@nextui-org/react";
 import styles from '../components/contact.module.css';
 
 const Contact = () => {
   return (
-    <section className="body-font mt-10" id="contacto">
+    <section className="body-font mt-10 max-w-7xl m-auto" id="contacto">
       <div className="container px-5 py-24 mx-auto">
         <div className={styles.titleContainer+" flex flex-col text-center mb-16"}>
           <h3 className={styles.title+" sm:text-3xl mb-4"}>
@@ -15,9 +16,53 @@ const Contact = () => {
           Para ponerse en contacto con nosotros, complete el formulario disponible aquí o utilice cualquiera de los siguientes datos de contacto
           </p>
         </div>
-        <div className={styles.contactContainer}>
-          <div className={styles.info}></div>
-          <div className={styles.form}></div>
+        <div className={styles.contactContainer+" justify-center"}>
+          <div className={styles.info}>
+            <ul>
+              <li className="mb-14">
+                <h5 className={styles.infoName}>Ubicación</h5>
+                <p className={styles.infoText}>Buenos Aires, Argentina.</p>
+              </li>
+              <li className="mb-14">
+              <h5 className={styles.infoName}>E-mail</h5>
+              <p className={styles.infoText}>info.infinitydigital@gmail.com</p>
+              </li>
+              <li className="mb-14">
+              <h5 className={styles.infoName}>WhatsApp</h5>
+              <p className={styles.infoText}>+54 9 11 9999-9999</p>
+              </li>
+              <li>
+              <h5 className={styles.infoName}>Instagram</h5>
+              <p className={styles.infoText}>@infinitydigital</p>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.form+" border-gray-300 shadow rounded-lg"}>
+            <form>
+            <div className="flex w-full flex-wrap md:flex-nowrap gap-7 mt-9 mb-5">
+              <Input type="text" label="Nombre" variant="bordered" className="ml-7"/>
+              <Input type="text" label="Empresa" variant="bordered" className="mr-7" />
+            </div>
+            <div className="flex w-full flex-wrap md:flex-nowrap gap-7 mb-5">
+              <Input type="email" label="Email" variant="bordered" className="ml-7" />
+              <Input type="phone" label="Número" variant="bordered" className="mr-7"/>
+            </div>
+            <Textarea
+              variant="bordered"
+              label="¿En qué podemos ayudarte?"
+              labelPlacement="inside"
+              className="flex flex-wrap md:flex-nowrap mb-5 w-auto mx-7" />
+            <button className={styles.bttn+" h-12 mb-9 mx-7 rounded-lg"}>
+              Enviar
+            </button>
+            </form>
+            {/* <div className="flex w-full flex-wrap md:flex-nowrap pb-7 max-w-full">
+              <a href="" className= {styles.bttn +" border border-gray-900  px-auto py-2.5 text-center"}>
+                Enviar
+              </a>
+            </div> */}
+            
+          </div>
         </div>
         {/* <div className="lg:w-1/2 md:w-2/3 mx-auto">
           <div className="flex flex-wrap -m-2">

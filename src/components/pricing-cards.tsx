@@ -42,7 +42,7 @@ const PricingCards = () => {
 		<section className="bg-white" id="pricing">
 			<div className="py-7 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
 				<div className="mx-auto max-w-screen-md text-center mb-7 lg:mb-12">
-					<h3 className={styles.title+" mb-4 text-4xl tracking-tight font-extrabold"}>
+					<h3 className={styles.title+" mb-4 text-4xl tracking-tight"}>
 						Comienza a crecer
 					</h3>
 				</div>
