@@ -1,6 +1,6 @@
 .titleContainer {
     height: 139px;
-    color: #272A2AF0;
+    color: #272A2A;
 }
 
 .title {
@@ -16,27 +16,53 @@
     width: 550px;
 }
 
-/* .contactContainer {
-    width: 80%;
-    height: 404px;
-    position: relative;
+.contactContainer {
     display: flex;
 }
 
-.form {
-    border: solid red;
-    background-color: lightcoral;
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    right: 0;
+.info {
+    width: 45%;
 }
 
-.info {
-    border: solid blue;
-    background-color: lightcyan;
+.infoName {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: rgba(39, 42, 42, 0.8);
+}
+
+.infoText {
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: rgba(39, 42, 42, 0.8);
+    ;
+}
+
+.form {
+    position: relative;
+    border: solid transparent blur(8px);
+    width: 50%;
+    background-color: #FFFFFF;
+}
+
+.form::before {
+    content: "";
     position: absolute;
-    width: 40%;
-    height: 100%;
+    z-index: -1;
+    top: 0;
     left: 0;
-} */
+    width: 100%;
+    height: 100%;
+    background: rgb(209 213 219);
+    background-size: 800%;
+    border-radius: 8px;
+    filter: blur(8px);
+}
+
+.bttn {
+    cursor: pointer;
+    background-color: #272A2AF2;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    width: 90%;
+}

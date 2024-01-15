@@ -10,15 +10,15 @@ import styles from '../components/content.module.css';
 
 const Content = () => {
   return (
-    <section className="text-gray-600 body-font" id="servicios">
+    <section className="body-font max-w-7xl m-auto" id="servicios">
       <div className="h-[70px]"></div>
-      <div className=" w-full px-5 py-24 mx-auto">
+      <div className=" w-full py-24 mx-auto">
         <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-          <h3 className={styles.title+" sm:text-3xl text-4xl tracking-tight font-extrabold mb-2"}>
+          <h3 className={styles.title+" sm:text-3xl tracking-tight"}>
             Servicios
           </h3>
         </div>
-        <div className="block lg:flex flex-wrap justify-evenly mx-24">
+        <div className="block lg:flex flex-wrap justify-between m-auto">
 
           <Card className={styles.cardBorder + " overflow-visible block"}>
 
