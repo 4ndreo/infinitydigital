@@ -1,8 +1,11 @@
 'use client';
 import React from "react";
-import desarrolloImage from "../utils/img/desarrollo-web.png";
-import apiImage from "../utils/img/api-medida.png";
-import marketingDigital from "../utils/img/campana-digital.png";
+// import desarrolloImage from "../utils/img/desarrollo-web.png";
+// import apiImage from "../utils/img/api-medida.png";
+// import marketingDigital from "../utils/img/campana-digital.png";
+import apiImg from '@/utils/img/API.svg';
+import desWebImg from '@/utils/img/Web.svg';
+import marketingImg from '@/utils/img/Marketing.svg';
 import Image from "next/image";
 import {Card, CardHeader, CardFooter, CardBody} from "@nextui-org/react";
 import styles from '../components/content.module.css';
@@ -22,42 +25,57 @@ const Content = () => {
 
           <Card className={styles.cardBorder + " overflow-visible block"}>
 
-            <CardHeader className="flex-col items-center">
+            <CardHeader className="flex-col items-start">
             <Image
-                className="object-cover rounded-xl"
-                src={desarrolloImage} alt="Desarrollo web" width={132} height={132}
+                className={styles.img+" object-cover"}
+                src={desWebImg} alt="desarrollo web"
                 />              
             </CardHeader>
-            <CardBody></CardBody>
-            <CardFooter className="overflow-visible py-2 justify-center text-center">
+
+            <CardBody className="p-2">
               <h4 className={styles.cardTitle}>Desarrollo Web</h4>
+            </CardBody>
+
+            <CardFooter className="overflow-visible justify-start p-2">
+              <p className={styles.cardInfo}>Diseño y programación de sitios interactivos para experiencias online atractivas y funcionales.</p>
             </CardFooter>
           </Card>
 
           <Card className={styles.cardBorder+ " overflow-visible block"}>
-            <CardHeader className="flex-col items-center">
+            <CardHeader className="flex-col items-start">
+
             <Image
-                className="object-cover rounded-xl"
-                 src={apiImage} alt="api a medida" width={132} height={132}
+                className={styles.img+" object-cover"}
+                 src={apiImg} alt="api a medida"
               />              
             </CardHeader>
-            <CardBody></CardBody>
-            <CardFooter className="overflow-visible py-2 justify-center text-center">
+
+            <CardBody className="p-2">
               <h4 className={styles.cardTitle}>Desarrollo de APIs</h4>
+            </CardBody>
+
+            <CardFooter className="overflow-visible justify-start p-2">
+              <p className={styles.cardInfo}>Creación y gestión de interfaces para conectar sistemas y facilitar el intercambio de datos de manera eficiente.</p>
             </CardFooter>
           </Card>
 
           <Card className={styles.cardBorder+ " overflow-visible block"}>
-            <CardHeader className="flex-col items-center">
+            <CardHeader className="flex-col items-start">
+
             <Image
-                className="object-cover rounded-xl"
-                 src={marketingDigital} alt="api a medida" width={132} height={132}
+                className={styles.img+" object-cover"}
+                 src={marketingImg} alt="marketing digital"
               />              
             </CardHeader>
-            <CardBody></CardBody>
-            <CardFooter className="overflow-visible py-2 justify-center text-center">
+
+            <CardBody className="p-2">
               <h4 className={styles.cardTitle}>Marketing Digital</h4>
+            </CardBody>
+
+            <CardFooter className="overflow-visible justify-start p-2">
+              <p className={styles.cardInfo}>Implementación de estrategias online para promocionar marcas, productos o servicios, aprovechando plataformas digitales y redes sociales.</p>
             </CardFooter>
+
           </Card>
         </div>
       </div>
