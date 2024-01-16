@@ -24,6 +24,16 @@
     width: 45%;
 }
 
+.svg {
+    display: inline-block;
+    margin-bottom: 4rem;
+    margin-right: 4px;
+}
+
+.infoContain {
+    display: inline-block;
+}
+
 .infoName {
     font-weight: 600;
     font-size: 1.25rem;
