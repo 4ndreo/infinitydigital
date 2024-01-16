@@ -13,7 +13,7 @@ const HeroSection = () => {
 						<span className='block'>Creando Oportunidades <span className={styles.colorAnimated}>Infinitas</span></span>
 						
 					</h1>
-					<Button className='bg-white hover:bg-[#EF55FF] hover:text-white text-gray-800 font-extrabold py-6 px-10 text-xl'>
+					<Button className='bg-white hover:bg-[#EF55FF] hover:text-white font-extrabold py-5 px-11 text-xl h-[unset]'>
 						Comienza ahora
 					</Button>
 				</div>
