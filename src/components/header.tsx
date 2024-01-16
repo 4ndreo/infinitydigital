@@ -8,7 +8,7 @@ import { useScrollPosition } from '@/hooks/useScrollPosition'
 const Header = () => {
 	const scrollPosition = useScrollPosition()
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isScroll500, setIsScroll500] = React.useState(true);
+  const [isScroll250, setIsScroll250] = React.useState(true);
   
 	const menuItems = [
     {
@@ -31,12 +31,12 @@ const Header = () => {
 
   function handleScroll (e:any) {
     console.log("scroll", e);
-    e >= 500 ? setIsScroll500(false) : setIsScroll500(true)
+    e >= 250 ? setIsScroll250(false) : setIsScroll250(true)
   }
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll500 ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll500}>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll250}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
