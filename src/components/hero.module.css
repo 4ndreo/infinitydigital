@@ -1,0 +1,22 @@
+@keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+
+.colorAnimated {
+    --bg-size: 400%;
+  --color-one: #08E1FE;
+  --color-two: #E55AFE;
+  /* font-size: clamp(3rem, 25vmin, 8rem); */
+  background: linear-gradient(
+                45deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: move-bg 20s infinite linear;
+}

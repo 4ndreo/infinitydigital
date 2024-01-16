@@ -8,7 +8,7 @@ import { useScrollPosition } from '@/hooks/useScrollPosition'
 const Header = () => {
 	const scrollPosition = useScrollPosition()
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isScroll0, setIsScroll0] = React.useState(true);
+  const [isScroll500, setIsScroll500] = React.useState(true);
   
 	const menuItems = [
     {
@@ -31,19 +31,19 @@ const Header = () => {
 
   function handleScroll (e:any) {
     console.log("scroll", e);
-    e !== 0 ? setIsScroll0(false) : setIsScroll0(true)
+    e >= 500 ? setIsScroll500(false) : setIsScroll500(true)
   }
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll0 ? styles.transparent : styles.navbarDark}} isBlurred={!isScroll0}>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll500 ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll500}>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-white">INFINITY DIGITAL</p>
+          <p className={styles.brandText + " font-bold text-white"}>INFINITY DIGITAL</p>
         </NavbarBrand>
       </NavbarContent>
 

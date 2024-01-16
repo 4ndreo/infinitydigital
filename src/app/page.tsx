@@ -10,10 +10,8 @@ import PricingCards from '@/components/pricing-cards'
 export default function Home() {
 	return (
 		<main>
-				<Header />
-			<div className="bg-[url('/bg-image.jpg')] bg-no-repeat bg-center bg-cover h-screen opacity-90">
-				<HeroSection />
-			</div>
+			<Header />
+			<HeroSection />
 			<div className="grey">
 			<Introduction />
 			<Content />
