@@ -1,9 +1,9 @@
 .bttn {
     position: absolute;
     bottom: 0;
-    margin-bottom: 20px;
-    width: 288px;
-    height: 46px;
+    margin-bottom: 1.25rem;
+    width: 82%;
+    height: 2.9rem;
     border-radius: 9px;
     cursor: pointer;
     background-color: #272A2AF2;
@@ -13,12 +13,13 @@
 }
 
 .card {
-    width: 353px;
-    height: 606px;
+    width: 22rem;
+    height: 37.5rem;
 }
 
 .type {
-    margin-top: 46px;
+    margin-top: 2.9rem;
+    margin-bottom: 2rem;
     color: #202020;
     font-size: 30px;
     font-weight: 700;
