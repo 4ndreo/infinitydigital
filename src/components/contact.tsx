@@ -1,23 +1,23 @@
 'use client';
 import React from "react";
 import ContactForm from "./form";
-import {Input, Textarea} from "@nextui-org/react";
+import {Button, Input, Textarea} from "@nextui-org/react";
 import styles from '../components/contact.module.css';
 import locationImg from '@/utils/img/ubicacion.svg';
 
 const Contact = () => {
   return (
     <section className="body-font mt-10 max-w-7xl m-auto" id="contacto">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container py-24 mx-auto">
         <div className={styles.titleContainer+" flex flex-col text-center mb-16"}>
           <h3 className={styles.title+" sm:text-3xl mb-4"}>
             Contáctanos
           </h3>
           <p className={styles.text+" lg:w-2/3 mx-auto"}>
-          Para ponerse en contacto con nosotros, complete el formulario disponible aquí o utilice cualquiera de los siguientes datos de contacto
+          Para ponerte en contacto con nosotros, completa el formulario disponible aquí o utiliza cualquiera de los siguientes datos de contacto.
           </p>
         </div>
-        <div className={styles.contactContainer+" justify-center"}>
+        <div className={styles.contactContainer+" justify-between"}>
           <div className={styles.info}>
             <ul>
               <li className="mb-2">
@@ -83,9 +83,9 @@ const Contact = () => {
               label="¿En qué podemos ayudarte?"
               labelPlacement="inside"
               className="flex flex-wrap md:flex-nowrap mb-5 w-auto mx-7" />
-            <button className={styles.bttn+" h-12 mx-7 rounded-lg"}>
+            <Button className={styles.bttn+" h-12 mx-7 rounded-lg"}>
               Enviar
-            </button>
+            </Button>
             </form>
           </div>
         </div>

@@ -29,8 +29,8 @@ const Header = () => {
 		}
 	];
 
-  function handleScroll (e:any) {
-    console.log("scroll", e);
+  function handleScroll (e:number) {
+    // console.log("scroll", e);
     e >= 250 ? setIsScroll250(false) : setIsScroll250(true)
   }
 

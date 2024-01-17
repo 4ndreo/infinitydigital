@@ -32,6 +32,7 @@
 
 .infoContain {
     display: inline-block;
+    padding-left: 0.875rem;
 }
 
 .infoName {

@@ -26,7 +26,8 @@ module.exports = {
         infinity: {
           layout: {}, // light theme layout tokens
           colors: {
-            white: "#FFFFFF",
+            ghostWhite: "#f8f8ff",
+            black: "#272a2af2",
             background: "#FFFFFF", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {

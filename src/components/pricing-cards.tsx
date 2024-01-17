@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '../components/pricing-cards.module.css';
-import {Image} from "@nextui-org/react";
+import {Button, Image, Link} from "@nextui-org/react";
 
 const PricingCard = ({
 	type,
@@ -19,14 +19,14 @@ const PricingCard = ({
 	<div className={styles.card + " flex flex-col relative p-5 h-full mx-auto max-w-sm items-center bg-white rounded-lg border border-gray-300 shadow xl:p-8"}>
 		{/* <img src={source} alt={alt} width={353} height={202}/> */}
 		<Image
-      alt={alt} width={190} height={150}
-      src={source}
-    />
+		alt={alt} width={'auto'} height={155}
+		src={source}
+		/>
 		<h3 className={styles.type}>{type}</h3>
 		<p className={styles.text+" sm:text-lg"}>{description}</p>
-		<a href="" className= {styles.bttn +" border border-gray-900 rounded-lg py-2.5 text-center"}>
+		<Link as={Button} href={'/plans/' + type} className={styles.bttn +" rounded-lg py-2.5 text-center justify-center"}>
 			{ctaText}
-		</a>
+		</Link>
 	</div>
 )
 
@@ -57,7 +57,7 @@ const PricingCards = () => {
 
 	return (
 		<section className="bg-white" id="pricing">
-			<div className="py-7 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-12">
+			<div className="py-7 mx-auto max-w-7xl lg:py-16">
 				<div className="mx-auto max-w-screen-md text-center mb-7 lg:mb-12">
 					<h3 className={styles.title+" mb-4"}>
 						Comienza a crecer
