@@ -1,0 +1,45 @@
+.intro {
+    margin-bottom: 6rem;
+}
+
+.title{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.text {
+    font-size: 1.25rem;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.75rem;
+}
+
+.sectionForm {
+    margin-bottom: 3.5rem;
+}
+
+.bttn {
+    background-color: #08E1FE;
+    color: #000;
+    height: 3.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.bgSmall {
+    background: url('/img/innovation-tech.svg') right center no-repeat;
+    background-size: 45%;
+}
+
+.bgBig {
+    background: url('/img/grandes-empresas.svg') right center no-repeat;
+    background-size: 45%;
+}
+
+.bgCustom {
+    background: url('/img/plan-personalizado.svg') right center no-repeat;
+    background-size: 45%;
+}
