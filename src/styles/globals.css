@@ -17,19 +17,24 @@ html {
 
 main {
   margin-top: -4rem;
-  height: 100%;
 }
 
-/* .layout {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  justify-content: flex-start;
+.layout {
+  display:grid;
+   grid-template-rows:auto 1fr auto;
+   grid-template-columns:100%;
+
+   /* fallback height */
+   min-height:100vh;
+
+   /* new small viewport height for modern browsers */
+   min-height:100svh;
 }
 
 .footer {
-  margin-top: auto;
-} */
+  grid-row-start: 3;
+grid-row-end: 3;
+}
 .grey {
   background-color: #F8F8F8;
   z-index: -2;
