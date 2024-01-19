@@ -17,8 +17,19 @@ html {
 
 main {
   margin-top: -4rem;
+  height: 100%;
 }
 
+/* .layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.footer {
+  margin-top: auto;
+} */
 .grey {
   background-color: #F8F8F8;
   z-index: -2;

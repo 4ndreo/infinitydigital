@@ -36,7 +36,7 @@ const Header = () => {
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll250}>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll250} className='header'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

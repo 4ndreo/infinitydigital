@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="text-white body-font bg-black">
+    <footer className="text-white body-font bg-black footer">
       <div className="container py-8 flex items-center sm:flex-row flex-col max-w-7xl m-auto justify-between">
         <span className={"bg-[url('/img/logos/white-infinity-digital-logo.svg')] bg-no-repeat bg-left bg-contain indent-[-9999px] whitespace-nowrap w-1/2 h-4"}>Infinity Digital</span>
         
