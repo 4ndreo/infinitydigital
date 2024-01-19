@@ -19,6 +19,22 @@ main {
   margin-top: -4rem;
 }
 
+.layout {
+  display:grid;
+   grid-template-rows:auto 1fr auto;
+   grid-template-columns:100%;
+
+   /* fallback height */
+   min-height:100vh;
+
+   /* new small viewport height for modern browsers */
+   min-height:100svh;
+}
+
+.footer {
+  grid-row-start: 3;
+grid-row-end: 3;
+}
 .grey {
   background-color: #F8F8F8;
   z-index: -2;

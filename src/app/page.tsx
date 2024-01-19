@@ -10,7 +10,6 @@ import PricingCards from '@/components/pricing-cards'
 export default function Home() {
 	return (
 		<main>
-			<Header />
 			<HeroSection />
 			<div className="grey">
 			<Introduction />
