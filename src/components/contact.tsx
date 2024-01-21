@@ -6,6 +6,10 @@ import styles from '../components/contact.module.css';
 import locationImg from '@/utils/img/ubicacion.svg';
 
 const Contact = () => {
+
+
+  
+
   return (
     <section className="body-font mt-10 max-w-7xl m-auto" id="contacto">
       <div className="container py-24 mx-auto">

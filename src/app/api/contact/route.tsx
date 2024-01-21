@@ -6,22 +6,24 @@ import { Email } from "@/components/email";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const body = await req.json();
-  const { name, email, message } = body;
+  const { nombre, email, message } = body;
 
   const emailHtml = render(
-    <Email name={name} email={email} message={message} />
+    <Email name={nombre} email={email} message={message} />
   );
 
   const transporterInstance = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    port: 587,
+    // secure: true,
     auth: {
-      type: 'OAuth2',
-      user: process.env.MAIL_USERNAME,
-      clientId: process.env.OAUTH_CLIENTID,
-      clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN
+      // type: 'OAuth2',
+      // user: process.env.MAIL_USERNAME,
+      user: 'franjandreo@gmail.com',
+      pass: 'lrol yzfs hqla jggu'
+      // clientId: process.env.OAUTH_CLIENTID,
+      // clientSecret: process.env.OAUTH_CLIENT_SECRET,
+      // refreshToken: process.env.OAUTH_REFRESH_TOKEN
     },
   });
 
@@ -29,7 +31,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     from: smtpEmail,
     to: smtpEmail,
     subject: "Nuevo mensaje de contacto",
-    html: emailHtml,
+    html: message,
   };
 
   try {

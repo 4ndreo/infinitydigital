@@ -20,7 +20,7 @@ main {
 }
 
 .layout {
-  display:grid;
+   display:grid;
    grid-template-rows:auto 1fr auto;
    grid-template-columns:100%;
 
@@ -33,8 +33,9 @@ main {
 
 .footer {
   grid-row-start: 3;
-grid-row-end: 3;
+  grid-row-end: 3;
 }
+
 .grey {
   background-color: #F8F8F8;
   z-index: -2;

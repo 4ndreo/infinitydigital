@@ -29,6 +29,12 @@
     font-weight: bold;
 }
 
+.bttn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .bgSmall {
     background: url('/img/innovation-tech.svg') right center no-repeat;
     background-size: 45%;
