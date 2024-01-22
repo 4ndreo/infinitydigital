@@ -11,8 +11,9 @@ const Contact = () => {
   
 
   return (
-    <section className="body-font mt-10 max-w-7xl m-auto" id="contacto">
-      <div className="container py-24 mx-auto">
+    <section className="body-font max-w-7xl m-auto relative" id="contacto">
+      <div className={styles.blobL}></div>
+      <div className="container py-20 mx-auto">
         <div className={styles.titleContainer+" flex flex-col text-center mb-16"}>
           <h3 className={styles.title+" sm:text-3xl mb-4"}>
             Contáctanos

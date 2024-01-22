@@ -1,6 +1,6 @@
-.intro {
+/* .intro {
     margin-bottom: 6rem;
-}
+} */
 
 .title{
     font-size: 2.5rem;
@@ -17,35 +17,44 @@
     margin-bottom: 1.75rem;
 }
 
+.formBg {
+    background: url('/img/bg-form.svg') no-repeat;
+    background-size: 75%;
+    background-position: 150% 0;
+}
+
 .sectionForm {
     margin-bottom: 3.5rem;
 }
 
 .bttn {
-    background-color: #08E1FE;
-    color: #000;
+    background-color: #272A2AF2;
+    color: #fff;
     height: 3.5rem;
     font-size: 1rem;
     font-weight: bold;
 }
 
 .bttn:disabled {
-    opacity: 0.5;
+    opacity: 0.75;
     cursor: not-allowed;
     transform: none;
 }
 
 .bgSmall {
-    background: url('/img/innovation-tech.svg') right center no-repeat;
-    background-size: 45%;
+    background: url('/img/innovation-tech.svg') no-repeat;
+    background-position: center bottom;
+    background-size: 100%;
 }
 
 .bgBig {
-    background: url('/img/grandes-empresas.svg') right center no-repeat;
-    background-size: 45%;
+    background: url('/img/grandes-empresas.svg') no-repeat;
+    background-position: center bottom;
+    background-size: 85%;
 }
 
 .bgCustom {
-    background: url('/img/plan-personalizado.svg') right center no-repeat;
-    background-size: 45%;
+    background: url('/img/plan-personalizado.svg') no-repeat;
+    background-position: center bottom;
+    background-size: 95%;
 }
