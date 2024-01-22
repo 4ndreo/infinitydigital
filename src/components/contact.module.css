@@ -1,3 +1,15 @@
+.blobL {
+    background: url('/img/blob-izq.svg') no-repeat;
+    background-size: contain;
+    height: 297px;
+    width: 337px;
+    position: absolute;
+    left: -350px;
+    top: -70px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
 .titleContainer {
     height: 139px;
     color: #272A2A;

@@ -4,12 +4,13 @@ import Link from 'next/link';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link as UILink, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 import styles from '../components/header.module.css';
 
-import { useScrollPosition } from '@/hooks/useScrollPosition'
+import {useScrollPosition} from '@/hooks/useScrollPosition'
 const Header = () => {
 	const scrollPosition = useScrollPosition()
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScroll250, setIsScroll250] = React.useState(true);
-  
+  const pathName = window.location.pathname;
+
 	const menuItems = [
     {
       name: "Inicio",
@@ -30,13 +31,13 @@ const Header = () => {
 	];
 
   function handleScroll (e:number) {
-    // console.log("scroll", e);
+    // console.log("scroll", pathName);
     e >= 250 ? setIsScroll250(false) : setIsScroll250(true)
   }
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll250} className='header'>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll250} className='header'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}

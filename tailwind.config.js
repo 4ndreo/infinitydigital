@@ -28,6 +28,7 @@ module.exports = {
           colors: {
             ghostWhite: "#f8f8ff",
             black: "#272a2af2",
+            textBlack: "#272a2a",
             background: "#FFFFFF", // or DEFAULT
             foreground: "#11181C", // or 50 to 900 DEFAULT
             primary: {

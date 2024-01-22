@@ -20,3 +20,15 @@
   -webkit-background-clip: text;
   animation: move-bg 20s infinite linear;
 }
+
+.blobR {
+  background: url('/img/blob-der.svg') no-repeat;
+  background-size: contain;
+  height: 532px;
+  width: 423px;
+  position: absolute;
+  right: 0;
+  top: 73%;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}

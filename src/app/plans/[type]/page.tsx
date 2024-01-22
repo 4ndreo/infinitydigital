@@ -121,7 +121,7 @@ export default function Plans({params}: any) {
 	}
 
 	return (
-		<main className='bg-black'>
+		<main className={styles.formBg+' text-textBlack'}>
 			<ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -134,15 +134,17 @@ export default function Plans({params}: any) {
         pauseOnHover
         theme="dark"
       />
-			<div className={styles[bgType] + ' max-w-7xl m-auto text-white h-full'}>
-				<div className={styles.intro + ' pt-40'}>
-					<h2 className={styles.title}>Elegiste el plan "{type}"</h2>
-					<p className={styles.text}>
+			<div className='max-w-7xl m-auto h-full flex justify-between'>
+				<div className='mt-32 max-w-[35%] flex'>
+					<div className={styles[bgType] +' h-[650px]'}>
+						<h2 className={styles.title+" mb-8"}>Elegiste el plan {type}</h2>
+						<p className={styles.text}>
 						Por favor danos más información para poder brindarte el mejor
 						servicio.
-					</p>
+						</p>
+					</div>
 				</div>
-				<div className='max-w-[45%]'>
+				<div className='min-w-[45%] mt-32'>
 					<form autoComplete="off">
 						<h3 className={styles.sectionTitle}>Empresa</h3>
 						<div className={styles.sectionForm + ' transition-all'}>
@@ -153,15 +155,11 @@ export default function Plans({params}: any) {
 									name='empresa'
 									label='Empresa'
 									variant='bordered'
-									classNames={{
-										label: '!text-white',
-										inputWrapper: '!border-white',
-									}}
+									classNames={{inputWrapper:'bg-white'}}
 									onChange={(e: any) => {
 										handleChange(e);
 									}}
 									isInvalid={!isString(values.empresa) && values.empresa.length > 3}
-									color={isString(values.empresa) ? 'success' : 'danger'}
 									errorMessage={
 										!isString(values.empresa) &&
 										values.empresa.length > 3 &&
@@ -172,10 +170,11 @@ export default function Plans({params}: any) {
 									label='Cantidad de empleados'
 									variant='bordered'
 									selectionMode='single'
+									classNames={{trigger:'bg-white'}}
 									onChange={(e: any) => {
 										handleSelectionChange('nEmpleados', e);
 									}}
-									classNames={{label: '!text-white', trigger: '!border-white'}}>
+									>
 									{nEmpleados.map((cantidad: string) => (
 										<SelectItem key={cantidad} value={cantidad}>
 											{cantidad}
@@ -187,13 +186,13 @@ export default function Plans({params}: any) {
 							<div className='flex w-full flex-wrap md:flex-nowrap'>
 								<Select
 									label='Rubro'
-									// name="rubro"
 									className='w-full'
 									variant='bordered'
+									classNames={{trigger:'bg-white'}}
 									onChange={(e: any) => {
 										handleSelectionChange('rubro', e);
 									}}
-									classNames={{label: '!text-white', trigger: '!border-white'}}>
+									>
 									{rubros.map((rubro: string) => (
 										<SelectItem key={rubro} value={rubro}>
 											{rubro}
@@ -215,13 +214,11 @@ export default function Plans({params}: any) {
 											variant='bordered'
 											selectionMode='multiple'
 											description='Podés elegir más de uno'
+											classNames={{trigger:'bg-white'}}
 											onChange={(e: any) => {
 												handleMultipleSelectionChange('servicio', e);
 											}}
-											classNames={{
-												label: '!text-white',
-												trigger: '!border-white',
-											}}>
+											>
 											{servicios.map((servicio: string) => (
 												<SelectItem key={servicio} value={servicio}>
 													{servicio}
@@ -236,12 +233,9 @@ export default function Plans({params}: any) {
 										label='¿Cuál es tu objetivo?'
 										labelPlacement='inside'
 										minRows={50}
+										classNames={{inputWrapper:'bg-white'}}
 										onChange={(e: any) => {
 											handleChange(e);
-										}}
-										classNames={{
-											label: '!text-white',
-											inputWrapper: '!border-white',
 										}}
 										className='flex flex-wrap md:flex-nowrap w-auto'
 									/>
@@ -261,40 +255,31 @@ export default function Plans({params}: any) {
 											label='Nombre completo'
 											name='nombre'
 											variant='bordered'
+											classNames={{inputWrapper:'bg-white'}}
 											onChange={(e: any) => {
 												handleChange(e);
 											}}
-											isInvalid={!isString(values.nombre)}
-											color={isString(values.nombre) ? 'success' : 'danger'}
+											isInvalid={!isString(values.nombre) && values.nombre.length > 3}
 											errorMessage={
-												!isString(values.nombre) &&
+												!isString(values.nombre) && values.nombre.length > 3 &&
 												'Por favor ingresa un nombre válido'
 											}
-											classNames={{
-												label: '!text-white',
-												inputWrapper: '!border-white',
-												input: '!bg-transparent',
-											}}
 										/>
 										<Input
 											type='tel'
 											label='Teléfono'
 											name='telefono'
 											variant='bordered'
+											classNames={{inputWrapper:'bg-white'}}
 											onChange={(e: any) => {
 												handleChange(e);
 											}}
-											isInvalid={!isPhone(values.telefono) && values.telefono.length > 3}
-											color={isPhone(values.telefono) ? 'success' : 'danger'}
+											isInvalid={!isPhone(values.telefono) && values.telefono.length > 0}
 											errorMessage={
 												!isPhone(values.telefono) &&
-												values.telefono.length > 3 &&
+												values.telefono.length > 0 &&
 												'Por favor ingresa un teléfono válido'
 											}
-											classNames={{
-												label: '!text-white',
-												inputWrapper: '!border-white',
-											}}
 										/>
 									</div>
 									<Input
@@ -302,21 +287,17 @@ export default function Plans({params}: any) {
 										label='Email'
 										name='email'
 										variant='bordered'
+										classNames={{inputWrapper:'bg-white'}}
 										onChange={(e: any) => {
 											handleChange(e);
 										}}
-										isInvalid={!isEmail(values.email) && values.email.length > 3}
-										color={isEmail(values.email) ? 'success' : 'danger'}
+										isInvalid={!isEmail(values.email) && values.email.length > 0}
 										errorMessage={
 											!isEmail(values.email) &&
-											values.email.length > 3 &&
+											values.email.length > 0 &&
 											'Por favor ingresa un email válido'
 										}
 										className='flex w-full flex-wrap md:flex-nowrap'
-										classNames={{
-											label: '!text-white',
-											inputWrapper: '!border-white',
-										}}
 									/>
 								</div>
 
