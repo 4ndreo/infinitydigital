@@ -68,7 +68,7 @@ const PricingCards = () => {
 						Comienza a crecer
 					</h3>
 				</div>
-				<div className="flex flex-wrap sm:gap-6 xl:gap-10 2xl:p-0 p-8">
+				<div className="flex flex-wrap gap-6 xl:gap-10 2xl:p-0 p-8">
 					{cards.map((card, i) => (
 						<PricingCard key={i} {...card} />
 					))}

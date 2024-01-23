@@ -30,27 +30,26 @@
 	margin-right: 4px;
 }
 
-.infoContain {
-	display: inline-block;
-	padding-left: 0.875rem;
-}
+/* .infoContain {
+	display: ;
+} */
 
 .infoName {
 	font-weight: 600;
 	font-size: 1.25rem;
 	color: rgba(39, 42, 42, 0.8);
+	padding-left: 2rem;
 }
 
 .infoText {
-	font-weight: 300;
 	font-size: 1.25rem;
 	color: rgba(39, 42, 42, 0.8);
+	padding-left: 2rem;
 }
 
 .form {
 	position: relative;
 	border: solid transparent blur(8px);
-	width: 50%;
 	background-color: #ffffff;
 }
 
@@ -89,6 +88,19 @@
 	filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 	-webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 	background-position: center right;
+}
+
+.iconLocation {
+	background: url('/img/ubicacion.svg') left center no-repeat;
+}
+.iconMail {
+	background: url('/img/mail.svg') left center no-repeat;
+}
+.iconWhatsapp {
+	background: url('/img/wpp.svg') left center no-repeat;
+}
+.iconInstagram {
+	background: url('/img/ig.svg') left center no-repeat;
 }
 
 @media screen and (max-width: 1300px) {
