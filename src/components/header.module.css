@@ -16,3 +16,13 @@
     width: 100%;
     white-space: nowrap;   
 }
+
+.wrapper {
+    max-width: 1280px;
+}
+
+.active {
+    font-weight: 700;
+    color: white;
+    border-bottom: 2px solid white;
+}

@@ -24,11 +24,23 @@
 .blobR {
   background: url('/img/blob-der.svg') no-repeat;
   background-size: contain;
-  height: 532px;
-  width: 423px;
+  max-height: 532px;
+  max-width: 423px;
+  height: 100%;
+  width: 100%;
   position: absolute;
   right: 0;
   top: 73%;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  background-position: center right;
+}
+
+@media screen and (max-width: 1300px) {
+  .blobR {
+    height: 50%;
+    width: 50%;
+    
+  }
+  
 }

@@ -2,13 +2,14 @@ import '../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Script from 'next/script';
 import {Inter} from 'next/font/google';
+// import * as Inter from '../../public/fonts/Inter-VariableFont_slnt,wght.ttf';
 import {Providers} from './providers';
 
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 const inter = Inter({
-	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 	subsets: ['latin'],
+	display: 'swap',
 });
 
 export const metadata = {
