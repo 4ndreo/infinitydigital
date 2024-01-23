@@ -11,9 +11,11 @@ const Contact = () => {
   
 
   return (
-    <section className="body-font max-w-7xl m-auto relative" id="contacto">
-      <div className={styles.blobL}></div>
-      <div className="container py-20 mx-auto">
+    <section className="body-font relative" id="contacto">
+      <div className="max-w-7xl m-auto">
+
+      <div className={styles.blobL + ' hidden lg:block'}></div>
+      <div className="container py-20 mx-auto px-10">
         <div className={styles.titleContainer+" flex flex-col text-center mb-16"}>
           <h3 className={styles.title+" sm:text-3xl mb-4"}>
             Contáctanos
@@ -22,11 +24,12 @@ const Contact = () => {
           Para ponerte en contacto con nosotros, completa el formulario disponible aquí o utiliza cualquiera de los siguientes datos de contacto.
           </p>
         </div>
-        <div className={styles.contactContainer+" justify-between container"}>
+        <div className={styles.contactContainer+" justify-between container md:flex-row flex-col"}>
           <div className={styles.info}>
             <ul>
               <li className="mb-2">
                 <svg className={styles.svg} width="25" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      
 <path d="M9.5 12.5C11.2259 12.5 12.625 11.1009 12.625 9.375C12.625 7.64911 11.2259 6.25 9.5 6.25C7.77411 6.25 6.375 7.64911 6.375 9.375C6.375 11.1009 7.77411 12.5 9.5 12.5Z" fill="#08E1FE"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M18.875 10.25C18.875 4.025 14.4219 0 9.5 0C4.57812 0 0.125 4.025 0.125 10.25C0.125 14.4 3.25391 19.3125 9.5 25C15.7461 19.3125 18.875 14.4 18.875 10.25ZM15.75 10.1719C15.75 5.89219 12.7813 3.125 9.5 3.125C6.21875 3.125 3.25 5.89219 3.25 10.1719C3.25 13.025 5.33594 16.4023 9.5 20.3125C13.6641 16.4023 15.75 13.025 15.75 10.1719Z" fill="#08E1FE"/>
                 </svg>
@@ -94,6 +97,7 @@ const Contact = () => {
             </form>
           </div>
         </div>        
+      </div>
       </div>
     </section>
   );
