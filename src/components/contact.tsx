@@ -24,8 +24,8 @@ const Contact = () => {
           Para ponerte en contacto con nosotros, completa el formulario disponible aquí o utiliza cualquiera de los siguientes datos de contacto.
           </p>
         </div>
-        <div className={styles.contactContainer+" justify-between container md:flex-row flex-col"}>
-          <div className={'w-full lg:w-[45%]'}>
+        <div className={styles.contactContainer+" justify-between container lg:flex-row flex-col"}>
+          <div className={'w-full lg:w-[45%] mb-9 lg:mb-0'}>
             <ul>
               <li className="mb-2">
                 <div className={styles.infoContain}>
@@ -54,22 +54,23 @@ const Contact = () => {
               </li>
             </ul>
           </div>
-          <div className={styles.form + " 'w-full lg:w-[50%]' border-gray-300 shadow rounded-lg"}>
-            <form className="my-9">
+          <div className={styles.form + " 'w-full lg:w-[50%]' border-gray-300 shadow rounded-lg mb-5"}>
+            <form className="my-9 px-7">
             <div className="flex w-full flex-wrap md:flex-nowrap gap-7 mb-5">
-              <Input type="text" label="Nombre" variant="bordered" className="ml-7"/>
-              <Input type="text" label="Empresa" variant="bordered" className="mr-7" />
+              <Input type="text" label="Nombre" variant="bordered" />
+              <Input type="text" label="Empresa" variant="bordered"  />
             </div>
             <div className="flex w-full flex-wrap md:flex-nowrap gap-7 mb-5">
-              <Input type="email" label="Email" variant="bordered" className="ml-7" />
-              <Input type="phone" label="Número" variant="bordered" className="mr-7"/>
+              <Input type="email" label="Email" variant="bordered"  />
+              <Input type="phone" label="Número" variant="bordered" />
             </div>
             <Textarea
               variant="bordered"
               label="¿En qué podemos ayudarte?"
               labelPlacement="inside"
+              classNames={{base: '!mx-0 w-full'}}
               className="flex flex-wrap md:flex-nowrap mb-5 w-auto mx-7" />
-            <Button className={styles.bttn+" h-12 mx-7 rounded-lg"}>
+            <Button className={styles.bttn+" h-12 rounded-lg w-full"}>
               Enviar
             </Button>
             </form>
