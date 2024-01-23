@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link as UILink, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 import styles from '../components/header.module.css';
+import toggleIcon from '@/utils/img/menu-icon.png';
 
 import {useScrollPosition} from '@/hooks/useScrollPosition'
 const Header = () => {
@@ -10,15 +11,16 @@ const Header = () => {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScroll250, setIsScroll250] = React.useState(true);
   const pathName = window.location.pathname;
+  const pathHash = window.location.hash;
 
 	const menuItems = [
     {
       name: "Inicio",
-			path: "#home",
+			path: "/#",
 		},
 		{
       name: "Servicios",
-			path: "#servicios",
+			path: "/#servicios",
 		},
 		{
       name: "Empresa",
@@ -26,7 +28,7 @@ const Header = () => {
 		},
 		{
       name: "Contacto",
-			path: "#contacto",
+			path: "/#contacto",
 		}
 	];
 
@@ -37,46 +39,46 @@ const Header = () => {
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} maxWidth={'xl'} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? styles.transparent : styles.navbarDark, wrapper: 'p-0'}} isBlurred={!isScroll250} className='header'>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? !isMenuOpen ? styles.transparent : styles.navbarDarker : !isMenuOpen ? styles.navbarDark : styles.navbarDarker, wrapper: styles.wrapper + ' container px-10 xl:px-0 m-auto ', toggleIcon: isMenuOpen ? styles.menuClosedIcon: styles.menuOpenedIcon }} isBlurred={!isScroll250 && !isMenuOpen} className='header'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="lg:hidden color-white"
         />
         <NavbarBrand>
           <p className={styles.brandText + " font-bold text-white"}>INFINITY DIGITAL</p>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
+      <NavbarContent className="hidden lg:flex gap-4" justify="end">
 	  {menuItems.map((item, index) => (
         <NavbarItem key={`${item.name}-${index}`}>
-			<UILink isBlock color="foreground" as={Link} href={item.path} className='text-white'>
-			{item.name}
-			</UILink>
+          <UILink isBlock href={item.path} className={pathHash===item.path || pathName === item.path ? styles.active : styles.inactive + ' text-white transition-all'}>
+          {item.name}
+          </UILink>
         </NavbarItem>
 
 		))}
+
+        <Button as={UILink} className={!isScroll250 || pathName!== '/' ? 'flex bg-ghostWhite hover:bg-[#EF55FF] hover:text-white font-bold' : 'hidden'} href="/#start">Comienza ahora</Button>
+
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className={styles.navbarDarker + ' px-10'} >
         {menuItems.map((item, index) => (
 			  index !== menuItems.length -1 ?
           <NavbarMenuItem key={`${item.name}-${index}`} >
             <UILink
-              color='foreground'
-              className="w-full"
+              className="w-full text-ghostWhite pb-5"
               href={item.path}
               size="lg"
-			  onClick={() => setIsMenuOpen(false) }
+			        onClick={() => setIsMenuOpen(false) }
             >
               {item.name}
             </UILink>
           </NavbarMenuItem>
 			:
           <NavbarMenuItem key={`${item.name}-${index}`}>
-			    <Button as={UILink} color="primary" href="#contacto" variant="flat" size="lg">
-		  	    Comienza ahora
-          </Button>
+			     <Button as={UILink} className={'inline-flex bg-ghostWhite hover:bg-[#EF55FF] hover:text-white font-bold'} href="/#start">Comienza ahora</Button>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
