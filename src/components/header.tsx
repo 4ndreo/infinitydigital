@@ -22,7 +22,7 @@ const Header = () => {
 		},
 		{
       name: "Empresa",
-			path: "#",
+			path: "/empresa/",
 		},
 		{
       name: "Contacto",
