@@ -134,9 +134,9 @@ export default function Plans({params}: any) {
         pauseOnHover
         theme="dark"
       />
-			<div className='max-w-7xl m-auto h-full flex justify-between'>
-				<div className='mt-32 max-w-[35%] flex'>
-					<div className={styles[bgType] +' h-[650px]'}>
+			<div className='max-w-7xl m-auto h-full md:flex md:justify-between  px-10'>
+				<div className='mt-32 w-full block md:max-w-[35%] md:flex'>
+					<div className={styles[bgType] +' pt-56 sm:pt-80 md:pt-0 md:pb-64 lg:pb-96 h-fit'}>
 						<h1 className={styles.title+" mb-8"}>Elegiste el plan {type}</h1>
 						<p className={styles.text}>
 						Por favor danos más información para poder brindarte el mejor
@@ -144,7 +144,7 @@ export default function Plans({params}: any) {
 						</p>
 					</div>
 				</div>
-				<div className='min-w-[45%] mt-32'>
+				<div className='block w-full md:w-[45%] mt-32'>
 					<form autoComplete="off">
 						<h2 className={styles.sectionTitle}>Empresa</h2>
 						<div className={styles.sectionForm + ' transition-all'}>
