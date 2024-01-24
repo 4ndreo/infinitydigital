@@ -5,12 +5,12 @@ import styles from '../components/hero.module.css';
 const HeroSection = () => {
 	return (
 		<section
-			className="text-gray-600 body-font bg-[url('/img/computer-alt.png')] bg-no-repeat bg-center bg-cover h-[80vh] relative"
+			className="text-gray-600 body-font bg-[url('/img/computer-alt-sm.png')] md:bg-[url('/img/computer-alt.png')] bg-no-repeat bg-center bg-cover h-[80vh] relative"
 			id='home'>
-			<div className='container ms-auto h-full w-5/12 flex items-center'>
-				<div className='text-left lg:w-full w-[900px]'>
-					<h1 className='title-font 2xl:text-6xl xl:text-5xl md:text-4xl text-3xl mb-20 tracking-tight font-bold text-white sm:leading-snug'>
-						<span className='block mb-10'>Innovamos en IT</span>
+			<div className='container m-auto md:m-0 md:ms-auto h-full md:w-5/12 flex items-center'>
+				<div className='text-center md:text-left lg:w-full w-[900px]'>
+					<h1 className='title-font 2xl:text-6xl xl:text-5xl md:text-4xl text-3xl mb-10 lg:mb-20 tracking-tight font-bold text-white sm:leading-snug'>
+						<span className='block mb-5 lg:mb-10'>Innovamos en IT</span>
 						<span className='block'>
 							Creando Oportunidades{' '}
 							<span className={styles.colorAnimated}>Infinitas</span>

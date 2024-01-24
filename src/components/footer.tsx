@@ -4,13 +4,14 @@ const Footer = () => {
   return (
     <footer className="text-white body-font bg-black footer">
       <div className="container py-8 px-10 flex items-center sm:flex-row flex-col m-auto">
-        <span className={"bg-[url('/img/logos/white-infinity-digital-logo.svg')] bg-no-repeat bg-left bg-contain indent-[-9999px] whitespace-nowrap w-1/2 h-4"}>Infinity Digital</span>
+        <span className={"bg-[url('/img/logos/white-infinity-digital-logo.svg')] bg-no-repeat bg-center md:bg-left bg-contain indent-[-9999px] whitespace-nowrap w-1/2 h-4"}>Infinity Digital</span>
         
-        <div className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start flex md:flex-row gap-3">
+        <div className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start flex flex-col-reverse md:flex-row gap-3">
           
-        <p className="text-sm">
+        <p className="text-sm m-auto">
           © {new Date().getFullYear()} Infinity Digital — Todos los derechos reservados
         </p>
+        <div className='flex justify-around py-5 md:justify-between md:w-1/2'>
           <a>
             <svg
               fill="currentColor"
@@ -66,6 +67,7 @@ const Footer = () => {
               <circle cx="4" cy="4" r="2" stroke="none"></circle>
             </svg>
           </a>
+          </div>
         </div>
       </div>
     </footer>
