@@ -37,3 +37,8 @@
     color: rgba(32, 32, 32, 0.35);
     line-height: 1rem;
 }
+
+.imgPricing {
+    height: 155px;
+    width: auto;
+}

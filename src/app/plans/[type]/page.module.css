@@ -60,24 +60,23 @@
 	.formBg {
 		background: none;
 	}
-    .bgSmall {
-        background: url('/img/innovation-tech.svg') no-repeat;
-        background-position: center top;
-        background-size: 70%;
-        
-    }
-    
-    .bgBig {
-        background: url('/img/grandes-empresas.svg') no-repeat;
-        background-position: center top;
-        background-size: 70%;
-    }
-    
-    .bgCustom {
-        background: url('/img/plan-personalizado.svg') no-repeat;
-        background-position: center top;
-        background-size: 70%;
-    }
+	.bgSmall {
+		background: url('/img/innovation-tech.svg') no-repeat;
+		background-position: center top;
+		background-size: 70%;
+	}
+
+	.bgBig {
+		background: url('/img/grandes-empresas.svg') no-repeat;
+		background-position: center top;
+		background-size: 70%;
+	}
+
+	.bgCustom {
+		background: url('/img/plan-personalizado.svg') no-repeat;
+		background-position: center top;
+		background-size: 70%;
+	}
 }
 @media screen and (max-width: 640px) {
 }
