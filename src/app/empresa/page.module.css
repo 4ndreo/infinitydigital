@@ -1,0 +1,53 @@
+
+.introText {
+    max-width: 40%;
+}
+
+.bgEmpresa {
+    background: url('/img/quienes-somos.svg') 90% 85% no-repeat;
+}
+
+.blobL {
+	background: url('/img/blob-izq.svg') no-repeat;
+	background-size: contain;
+	max-height: 297px;
+	max-width: 337px;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 150px;
+	top: 520px;
+	filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+	-webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+	background-position: center right;
+}
+
+.blueContainer {
+    background-color: #effdff;
+    padding: 40px 33px;
+    max-width: 50%;
+}
+
+.iconHands {
+    background: url('/img/compromiso.svg') left center no-repeat;
+}
+
+.iconLightbulb {
+    background: url('/img/hacerse-cargo.svg') left center no-repeat;
+}
+
+.iconAdn {
+    background: url('/img/adn.svg') left center no-repeat;
+}
+
+.iconEnergy {
+    background: url('/img/energia.svg') left center no-repeat;
+}
+
+.iconFlag {
+    background: url('/img/iniciativa.svg') left center no-repeat;
+}
+
+.iconStar {
+    background: url('/img/cercania.svg') left center no-repeat;
+}

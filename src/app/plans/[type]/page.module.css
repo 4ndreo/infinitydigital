@@ -1,60 +1,83 @@
-/* .intro {
-    margin-bottom: 6rem;
-} */
-
-.title{
-    font-size: 2.5rem;
-    font-weight: bold;
+.title {
+	font-size: 2.5rem;
+	font-weight: bold;
+	line-height: 48px;
 }
 
 .text {
-    font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 
 .sectionTitle {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.75rem;
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1.75rem;
 }
 
 .formBg {
-    background: url('/img/bg-form.svg') no-repeat;
-    background-size: 75%;
-    background-position: 150% 0;
+	background: url('/img/bg-form.svg') no-repeat;
+	background-size: 75%;
+	background-position: 150% 0;
 }
 
 .sectionForm {
-    margin-bottom: 3.5rem;
+	margin-bottom: 3.5rem;
 }
 
 .bttn {
-    background-color: #272A2AF2;
-    color: #fff;
-    height: 3.5rem;
-    font-size: 1rem;
-    font-weight: bold;
+	background-color: #272a2af2;
+	color: #fff;
+	height: 3.5rem;
+	font-size: 1rem;
+	font-weight: bold;
 }
 
 .bttn:disabled {
-    opacity: 0.75;
-    cursor: not-allowed;
-    transform: none;
+	opacity: 0.75;
+	cursor: not-allowed;
+	transform: none;
 }
 
 .bgSmall {
-    background: url('/img/innovation-tech.svg') no-repeat;
-    background-position: center bottom;
-    background-size: 100%;
+	background: url('/img/innovation-tech.svg') no-repeat;
+	background-position: center bottom;
+	background-size: 100%;
 }
 
 .bgBig {
-    background: url('/img/grandes-empresas.svg') no-repeat;
-    background-position: center bottom;
-    background-size: 85%;
+	background: url('/img/grandes-empresas.svg') no-repeat;
+	background-position: center bottom;
+	background-size: 85%;
 }
 
 .bgCustom {
-    background: url('/img/plan-personalizado.svg') no-repeat;
-    background-position: center bottom;
-    background-size: 95%;
+	background: url('/img/plan-personalizado.svg') no-repeat;
+	background-position: center bottom;
+	background-size: 95%;
+}
+
+@media screen and (max-width: 768px) {
+	.formBg {
+		background: none;
+	}
+    .bgSmall {
+        background: url('/img/innovation-tech.svg') no-repeat;
+        background-position: center top;
+        background-size: 70%;
+        
+    }
+    
+    .bgBig {
+        background: url('/img/grandes-empresas.svg') no-repeat;
+        background-position: center top;
+        background-size: 70%;
+    }
+    
+    .bgCustom {
+        background: url('/img/plan-personalizado.svg') no-repeat;
+        background-position: center top;
+        background-size: 70%;
+    }
+}
+@media screen and (max-width: 640px) {
 }
