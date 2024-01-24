@@ -80,7 +80,7 @@
 		margin-top: 5rem;
 	}
 }
-@media screen and (max-width: 950px) {
+@media screen and (767px < width <= 950px) {
     
     .card:last-child {
         margin-top: 2rem;

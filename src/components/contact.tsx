@@ -27,19 +27,19 @@ const Contact = () => {
         <div className={styles.contactContainer+" justify-between container lg:flex-row flex-col"}>
           <div className={'w-full lg:w-[45%] mb-9 lg:mb-0'}>
             <ul>
-              <li className="mb-2">
+              <li className="mb-6">
                 <div className={styles.infoContain}>
                 <h5 className={`${styles.infoName} ${styles.iconLocation}`}>Ubicación</h5>
                 <p className={styles.infoText}>Buenos Aires, Argentina.</p>
                 </div>
               </li>
-              <li className="mb-2">
+              <li className="mb-6">
               <div className={styles.infoContain}>
               <h5 className={`${styles.infoName} ${styles.iconMail}`}>E-mail</h5>
               <p className={styles.infoText}>info.infinitydigital@gmail.com</p>
               </div>
               </li>
-              <li className="mb-2">
+              <li className="mb-6">
               
               <div className={styles.infoContain}>
               <h5 className={`${styles.infoName} ${styles.iconWhatsapp}`}>WhatsApp</h5>
