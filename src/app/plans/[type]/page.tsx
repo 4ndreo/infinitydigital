@@ -137,7 +137,7 @@ export default function Plans({params}: any) {
 			<div className='max-w-7xl m-auto h-full flex justify-between'>
 				<div className='mt-32 max-w-[35%] flex'>
 					<div className={styles[bgType] +' h-[650px]'}>
-						<h2 className={styles.title+" mb-8"}>Elegiste el plan {type}</h2>
+						<h1 className={styles.title+" mb-8"}>Elegiste el plan {type}</h1>
 						<p className={styles.text}>
 						Por favor danos más información para poder brindarte el mejor
 						servicio.
@@ -146,7 +146,7 @@ export default function Plans({params}: any) {
 				</div>
 				<div className='min-w-[45%] mt-32'>
 					<form autoComplete="off">
-						<h3 className={styles.sectionTitle}>Empresa</h3>
+						<h2 className={styles.sectionTitle}>Empresa</h2>
 						<div className={styles.sectionForm + ' transition-all'}>
 							<div className='flex w-full flex-wrap md:flex-nowrap gap-10 mb-6'>
 								<Input
@@ -205,7 +205,7 @@ export default function Plans({params}: any) {
 						values.nEmpleados.length > 0 &&
 						values.rubro.length > 0 ? (
 							<>
-								<h3 className={styles.sectionTitle}>Servicio</h3>
+								<h2 className={styles.sectionTitle}>Servicio</h2>
 								<div className={styles.sectionForm + ' transition-all h-fit'}>
 									<div className='flex w-full flex-wrap md:flex-nowrap mb-3'>
 										<Select
@@ -244,7 +244,7 @@ export default function Plans({params}: any) {
 						) : null}
 						{values.servicio[0] !== '' && values.objetivo.length > 0 ? (
 							<>
-								<h3 className={styles.sectionTitle}>Información de contacto</h3>
+								<h2 className={styles.sectionTitle}>Información de contacto</h2>
 								<div
 									className={
 										styles.sectionForm + ' transition-all duration-500'

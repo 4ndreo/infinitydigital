@@ -38,7 +38,7 @@ const PricingCards = () => {
 			type: 'Pequeña_Escala',
 			description: 'Transforma tu negocio o emprendimiento con nuestros servicios digitales diseñados a medida. Desde presencia en internet hasta soluciones de comercio electrónico y marketing digital, te ofrecemos un conjunto integral de herramientas para expandir tu alcance, mejorar la visibilidad y aumentar tus ingresos.',
 			ctaText: 'Elegir plan',
-			source: '/img/pequeñas-empresas.svg',
+			source: '/img/innovation-tech.svg',
 			alt: 'pequeña escala',
 			name: 'Pequeña Escala',
 		},
