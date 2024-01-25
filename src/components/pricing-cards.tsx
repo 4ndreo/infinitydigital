@@ -19,7 +19,6 @@ const PricingCard = ({
 	name: string
 }) => (
 	<div className={styles.card + " flex flex-col relative p-5 h-full mx-auto max-w-sm items-center bg-white rounded-lg border border-gray-300 shadow xl:p-8"}>
-		{/* <img src={source} alt={alt} width={353} height={202}/> */}
 		<Image className={styles.imgPricing}
 		alt={alt} width={'auto'} height={155}
 		src={source}
