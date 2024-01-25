@@ -1,8 +1,4 @@
 
-.introText {
-    max-width: 40%;
-}
-
 .bgEmpresa {
     background: url('/img/quienes-somos.svg') 90% 85% no-repeat;
 }
@@ -16,7 +12,7 @@
 	width: 100%;
 	position: absolute;
 	left: 150px;
-	top: 520px;
+	top: 470px;
 	filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 	-webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 	background-position: center right;
@@ -25,7 +21,7 @@
 .blueContainer {
     background-color: #effdff;
     padding: 40px 33px;
-    max-width: 50%;
+    width: 50%;
 }
 
 .iconHands {
@@ -50,4 +46,35 @@
 
 .iconStar {
     background: url('/img/cercania.svg') left center no-repeat;
+}
+
+@media screen and (max-width: 1024px) {
+	.bgEmpresa {
+		background: url('/img/quienes-somos.svg') top center no-repeat;
+		background-size: 300px auto;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.blueContainer {
+		background-color: #effdff;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1730px) {
+	.blobL {
+		height: 30%;
+		width: 30%;
+		left: -50px;
+	}
+}
+
+@media screen and (max-width: 1320px) {
+	.blobL {
+		height: 30%;
+		width: 30%;
+		left: -80px;
+		top: 550px;
+	}
 }
