@@ -48,7 +48,7 @@
     background: url('/img/cercania.svg') left center no-repeat;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
 	.bgEmpresa {
 		background: url('/img/quienes-somos.svg') top center no-repeat;
 		background-size: 300px auto;
@@ -75,6 +75,6 @@
 		height: 30%;
 		width: 30%;
 		left: -80px;
-		top: 550px;
+		top: 500px;
 	}
 }

@@ -3,15 +3,14 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className="text-white body-font bg-black footer">
-      <div className="container py-8 px-10 flex items-center sm:flex-row flex-col m-auto">
-        <span className={"bg-[url('/img/logos/white-infinity-digital-logo.svg')] bg-no-repeat bg-center md:bg-left bg-contain indent-[-9999px] whitespace-nowrap w-1/2 h-4"}>Infinity Digital</span>
+      <div className="container py-8 px-10 flex items-center sm:flex-row flex-col gap-10 md:gap-0 m-auto">
+        <span className={"bg-[url('/img/logos/white-infinity-digital-logo.svg')] bg-no-repeat bg-center md:bg-left bg-contain indent-[-9999px] whitespace-nowrap w-full md:w-1/3 h-4"}>Infinity Digital</span>
         
-        <div className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start flex flex-col-reverse md:flex-row gap-3">
+        <p className="w-full md:w-1/3 text-sm text-center ">© {new Date().getFullYear()} Infinity Digital <span className='hidden xl:inline-block'>—</span> <span className='block md:inline-block'>Todos los derechos reservados</span></p>
+
+        <div className="w-full md:w-1/3 justify-center flex-col-reverse md:flex-row gap-3">
           
-        <p className="text-sm m-auto">
-          © {new Date().getFullYear()} Infinity Digital — Todos los derechos reservados
-        </p>
-        <div className='flex justify-around py-5 md:justify-between md:w-1/2'>
+        <div className='flex justify-around py-5 md:justify-end md:gap-10'>
           <a>
             <svg
               fill="currentColor"

@@ -66,9 +66,9 @@ export default function Company() {
                 </div>
                 <div>
                     <h2 className="text-[2.5rem] font-bold mb-4 lg:mb-16">Nuestros valores</h2>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 lg:gap-y-20 mb-2 lg:mb-24 pb-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 lg:gap-y-20 mb-2 lg:mb-24 pb-12">
                         {valor.map((value, i) => (
-                            <div key={i} className="lg:w-[320px] lg:h-[210px]">
+                            <div key={i}>
                                 <h4 className={styles[value.icon]+" text-[1.25rem] font-bold mb-4 pl-8"}>{value.title}</h4>
                                 <p className="text-[1rem]" dangerouslySetInnerHTML={{ __html: value.description }}></p>
                             </div>

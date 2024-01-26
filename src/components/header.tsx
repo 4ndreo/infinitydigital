@@ -24,7 +24,7 @@ const Header = () => {
 		},
 		{
       name: "Empresa",
-			path: "/empresa/",
+			path: "/empresa",
 		},
 		{
       name: "Contacto",
@@ -39,7 +39,7 @@ const Header = () => {
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? !isMenuOpen ? styles.transparent : styles.navbarDarker : !isMenuOpen ? styles.navbarDark : styles.navbarDarker, wrapper: styles.wrapper + ' container px-5 md:px-10 xl:px-0 m-auto ', toggleIcon: isMenuOpen ? styles.menuClosedIcon: styles.menuOpenedIcon }} isBlurred={!isScroll250 && !isMenuOpen} className='header'>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? !isMenuOpen ? styles.transparent : styles.navbarDarker : !isMenuOpen ? styles.navbarDark : styles.navbarDarker, wrapper: styles.wrapper + ' container px-5 md:px-10 xl:px-0 m-auto ', item: styles.inactive, toggleIcon: isMenuOpen ? styles.menuClosedIcon: styles.menuOpenedIcon }} isBlurred={!isScroll250 && !isMenuOpen} className='header'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -53,7 +53,7 @@ const Header = () => {
       <NavbarContent className="hidden lg:flex gap-4" justify="end">
 	  {menuItems.map((item, index) => (
         <NavbarItem key={`${item.name}-${index}`}>
-          <UILink isBlock href={item.path} className={pathHash===item.path || pathName === item.path ? styles.active : styles.inactive + ' text-white transition-all'}>
+          <UILink isBlock href={item.path} className={pathHash===item.path.replace("/", "") || pathName === item.path ? styles.active : styles.inactive + ' text-white transition-all'}>
           {item.name}
           </UILink>
         </NavbarItem>
@@ -65,7 +65,6 @@ const Header = () => {
       </NavbarContent>
       <NavbarMenu className={styles.navbarDarker + ' px-10'} >
         {menuItems.map((item, index) => (
-			  index !== menuItems.length -1 ?
           <NavbarMenuItem key={`${item.name}-${index}`} >
             <UILink
               className="w-full text-ghostWhite pb-5"
@@ -76,13 +75,13 @@ const Header = () => {
               {item.name}
             </UILink>
           </NavbarMenuItem>
-			:
-          <NavbarMenuItem key={`${item.name}-${index}`}>
+        ))}
+        <NavbarMenuItem>
 			     <Button as={UILink} className={'inline-flex bg-ghostWhite hover:bg-[#EF55FF] hover:text-white font-bold'} href="/#start">Comienza ahora</Button>
           </NavbarMenuItem>
-        ))}
       </NavbarMenu>
     </Navbar>
+    
 
 /*
 		<Navbar onMenuOpenChange={setIsMenuOpen}>
