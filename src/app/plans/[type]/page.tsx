@@ -32,10 +32,22 @@ export default function Plans({params}: any) {
 	async function handleSubmit() {
 		try {
 			const message = 
-			"Hola, soy <b>" + values.nombre + "</b>, me gustaría obtener una propuesta sobre para el plan " + type + 
-			"</ul> Estoy buscando un servicio de " + values.servicio.join(', ') + " para mi empresa de " + values.rubro + " llamada " + values.empresa + ", que tiene " + values.nEmpleados + " empleados, ya que mi objetivo es: \"" + values.objetivo + "\". Mi email de contacto es: " + values.email + " y mi teléfono es: " + values.telefono + "."
+			`
+			<div>
+				<ul>
+					<li>Nombre: ${values.nombre}</li>
+					<li>Plan elegido: ${type}</li>
+					<li>Servicios solicitados: ${values.servicio.join(', ')}</li>
+					<li>Rubro: ${values.rubro}</li>
+					<li>Nombre de la empresa: ${values.empresa}</li>
+					<li>Cantidad de empleados: ${values.nEmpleados}</li>
+					<li>Objetivo: ${values.objetivo}</li>
+					<li>E-mail: ${values.email}</li>
+					<li>Teléfono: ${values.telefono}</li>
+				</ul>
+			</div>
+			`
 			;
-
 
 			setIsLoading(true);
 			// Send email using Nodemailer
@@ -84,11 +96,6 @@ export default function Plans({params}: any) {
 	function handleChange(e: any) {
 		setValues({...values, [e.target.name]: e.target.value});
 	}
-	// function handlePhone(e: any) {
-	// 	if (isPhone(e.target.value)) {
-	// 		setValues({...values, [e.target.name]: e.target.value});
-	// 	}
-	// }
 
 	function handleSelectionChange(name: string, e: any) {
 		setValues({...values, [name]: e.target.value});

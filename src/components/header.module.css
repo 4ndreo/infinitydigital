@@ -41,3 +41,13 @@
     background: url('/img/close-outline.svg') no-repeat left center;
     color: transparent;
 }
+
+.inactive:hover {
+    font-weight: 700;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.inactive:hover::after, .active:hover::after {
+    background-color: transparent;
+}
