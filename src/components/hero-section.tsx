@@ -5,7 +5,7 @@ import styles from '../components/hero.module.css';
 const HeroSection = () => {
 	return (
 		<section
-			className="text-gray-600 body-font bg-[url('/img/computer-alt-sm.png')] md:bg-[url('/img/computer-alt.png')] bg-no-repeat bg-center bg-cover h-[80vh] relative"
+			className="text-gray-600 body-font bg-[url('/img/computer-alt-sm.png')] md:bg-[url('/img/computer-alt.png')] bg-no-repeat bg-center bg-cover h-[50vh] md:h-[80vh] relative"
 			id='home'>
 			<div className='container m-auto md:m-0 md:ms-auto h-full md:w-5/12 flex items-center'>
 				<div className='text-center md:text-left lg:w-full w-[900px]'>
