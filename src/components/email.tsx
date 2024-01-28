@@ -8,8 +8,8 @@ import {
   Html,
   Tailwind,
   Text,
+  Img, 
 } from "@react-email/components";
-import { Image } from "@nextui-org/react";
 
 interface EmailProps {
   title: string;
@@ -32,7 +32,7 @@ export const Email: React.FC<Readonly<EmailProps>> = ({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-[40px] w-[465px] rounded border border-solid border-[#eaeaea] p-[20px]">
-            <Image src="/img/logos/infinity-digital-logo-cropped.svg" alt="" width={200} ></Image>
+            <Img src="/img/logos/infinity-digital-logo-cropped.svg" alt="" width={200} ></Img>
             <Heading className="mx-0 my-[30px] p-0 text-center text-[24px] font-normal text-black">
               {title}
             </Heading>
