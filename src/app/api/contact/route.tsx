@@ -90,6 +90,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 	await new Promise((resolve, reject) => {
 		// send mail
 		transporterInstance.sendMail(mailOptions, (err, info) => {
+      
 			if (err) {
 				console.error(err);
 				reject(err);
