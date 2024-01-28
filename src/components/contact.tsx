@@ -18,11 +18,11 @@ const Contact = () => {
   async function handleSubmit() {
 		try {
 			const message = 
-      `<div>
+      `<div style="color: white">
         <ul>
           <li>Nombre: ${values.nombre}</li>
           <li>Empresa: ${values.empresa}</li>
-          <li>E-mail: ${values.email}</li>
+          <li>E-mail: <a href="mailto:${values.email}" style="color: white">${values.email}</a></li>
           <li>Teléfono: ${values.telefono}</li>
           <li>Consulta: ${values.consulta}</li>
         </ul>
@@ -157,6 +157,7 @@ const Contact = () => {
                 } />
               <Input
                 type="text"
+                name="empresa"
                 label="Empresa"
                 variant="bordered"  />
             </div>

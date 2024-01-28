@@ -7,7 +7,23 @@ import { ToastContainer, toast } from "react-toastify";
 
 export default function Plans({params}: any) {
 	const [isLoading, setIsLoading] = useState(false);
-	const rubros = ['gastronomía', 'salud'];
+	const rubros = ['Agricultura y ganadería',
+		'Alimentos y bebidas',
+		'Automotriz',
+		'Construcción',
+		'Educación',
+		'Energía',
+		'Finanzas',
+		'Salud',
+		'Tecnología',
+		'Turismo',
+		'Transporte',
+		'Manufactura',
+		'Medios de comunicación',
+		'Servicios profesionales',
+		'Comercio minorista',
+		'Telecomunicaciones',
+		'Otro'];
 	const servicios = [
 		'Desarrollo web',
 		'Desarrollo de APIs',
@@ -33,7 +49,7 @@ export default function Plans({params}: any) {
 		try {
 			const message = 
 			`
-			<div>
+			<div style="color: white">
 				<ul>
 					<li>Nombre: ${values.nombre}</li>
 					<li>Plan elegido: ${type}</li>
@@ -42,7 +58,7 @@ export default function Plans({params}: any) {
 					<li>Nombre de la empresa: ${values.empresa}</li>
 					<li>Cantidad de empleados: ${values.nEmpleados}</li>
 					<li>Objetivo: ${values.objetivo}</li>
-					<li>E-mail: ${values.email}</li>
+					<li>E-mail: <a href="mailto:${values.email}" style="color: white">${values.email}</a></li>
 					<li>Teléfono: ${values.telefono}</li>
 				</ul>
 			</div>
