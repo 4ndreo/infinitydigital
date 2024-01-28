@@ -32,8 +32,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
   });
 
   const mailOptions = {
-    from: smtpEmail,
-    to: smtpEmail,
+    from: process.env.GOOGLE_EMAIL,
+    to: process.env.GOOGLE_EMAIL,
     subject: "Infinity Digital - Nuevo mensaje de contacto",
     html: emailHtml,
     attachments: [{
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   };
 
   const mailClientOptions = {
-    from: smtpEmail,
+    from: process.env.GOOGLE_EMAIL,
     to: email,
     subject: "Infinity Digital - Consulta recibida con éxito",
     html: emailHtmlClient,
