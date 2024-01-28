@@ -37,7 +37,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 		auth: {
 			// type: 'OAuth2',
 			// user: process.env.MAIL_USERNAME,
-			user: process.env.GOOGLE_EMAIL,
+			user: process.env.NEXT_PUBLIC_GOOGLE_EMAIL,
 			pass: process.env.GOOGLE_PASSWORD,
 			// clientId: process.env.OAUTH_CLIENTID,
 			// clientSecret: process.env.OAUTH_CLIENT_SECRET,
@@ -46,8 +46,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
 	});
 
 	const mailOptions = {
-		from: process.env.GOOGLE_EMAIL,
-		to: process.env.GOOGLE_EMAIL,
+		from: process.env.NEXT_PUBLIC_GOOGLE_EMAIL,
+		to: process.env.NEXT_PUBLIC_GOOGLE_EMAIL,
 		subject: 'Infinity Digital - Nuevo mensaje de contacto',
 		html: emailHtml,
 		attachments: [
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 	};
 
 	const mailClientOptions = {
-		from: process.env.GOOGLE_EMAIL,
+		from: process.env.NEXT_PUBLIC_GOOGLE_EMAIL,
 		to: email,
 		subject: 'Infinity Digital - Consulta recibida con éxito',
 		html: emailHtmlClient,

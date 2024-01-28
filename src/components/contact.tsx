@@ -46,7 +46,7 @@ const Contact = () => {
 			// Show success message or redirect to a thank you page
 			console.log('El email se envio con éxito!');
       console.log('test')
-      console.log(process.env.GOOGLE_EMAIL)
+      console.log(process.env.NEXT_PUBLIC_GOOGLE_EMAIL)
 		} catch (error) {
 			// Handle error
       toast.error('Error al enviar el formulario. Intente nuevamente.');
