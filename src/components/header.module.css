@@ -1,16 +1,16 @@
 .navbarDark {
-    background-color: rgba(39, 42, 42, 0.9);
-    transition: all 0.3s ease-in-out;
+    background-color: rgba(39, 42, 42, 0.9) !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
 .navbarDarker {
-    background-color: rgba(39, 42, 42, 0.9);
-    transition: all 0.3s ease-in-out;
+    background-color: rgba(39, 42, 42, 0.9) !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
 .transparent {
-    background-color: rgba(0, 0, 0, 0);
-    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0) !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
 .brandText {
@@ -26,10 +26,14 @@
     max-width: 1280px;
 }
 
+.navItem {
+    transition: all 0.15s ease-in-out;
+}
+
 .active {
-    font-weight: 700;
-    color: white;
-    border-bottom: 2px solid white;
+    font-weight: 700 !important;
+    color: white !important;
+    border-bottom: 2px solid white !important;
 }
 
 .menuOpenedIcon {
@@ -49,5 +53,5 @@
 }
 
 .inactive:hover::after, .active:hover::after {
-    background-color: transparent;
+    background-color: transparent !important;
 }
