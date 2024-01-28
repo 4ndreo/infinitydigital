@@ -9,7 +9,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const { nombre, email, message } = body;
 
   const emailHtml = render(
-    <Email name={nombre} email={email} message={message} />
+    <Email type={'interno'} title={'¡Recibiste una nueva consulta en Infinity Digital!'} name={nombre} email={email} message={'Muchas gracias por enviarnos tu consulta.'} />
+  );
+  const emailHtmlClient = render(
+    <Email type={'cliente'} title={'¡Recibimos tu consulta!'} name={nombre} email={email} message={'Muchas gracias por escibirnos. Estaremos contactándote a la brevedad para brindarte más información.'} />
   );
 
   const transporterInstance = nodemailer.createTransport({
@@ -30,12 +33,20 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const mailOptions = {
     from: smtpEmail,
     to: smtpEmail,
-    subject: "Nuevo mensaje de contacto",
+    subject: "Infinity Digital - Nuevo mensaje de contacto",
     html: message,
+  };
+
+  const mailClientOptions = {
+    from: smtpEmail,
+    to: email,
+    subject: "Infinity Digital - Consulta recibida con éxito",
+    html: emailHtmlClient,
   };
 
   try {
     await transporterInstance.sendMail(mailOptions);
+    await transporterInstance.sendMail(mailClientOptions);
     console.log("Correo enviado con éxito");
   } catch (error) {
     console.error("Error al enviar el correo:", error);

@@ -47,10 +47,11 @@ const Contact = () => {
 			console.log('El email se envio con éxito!');
 		} catch (error) {
 			// Handle error
+      toast.error('Error al enviar el formulario. Intente nuevamente.');
 			console.error('Error al enviar el email:', error);
 		} finally {
 			// setSubmitting(false);
-			toast.success('Formulario completado con éxito!');
+			toast.success('Formulario enviado con éxito');
 			setIsLoading(false);
 		}
 	}

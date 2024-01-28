@@ -67,9 +67,10 @@ export default function Plans({params}: any) {
 		} catch (error) {
 			// Handle error
 			console.error('Error al enviar el email:', error);
+			toast.error('Error al enviar el formulario. Intente nuevamente.');
 		} finally {
 			// setSubmitting(false);
-			toast.success('Formulario completado con éxito!');
+			toast.success('Formulario enviado con éxito');
 			setIsLoading(false);
 		}
 	}
