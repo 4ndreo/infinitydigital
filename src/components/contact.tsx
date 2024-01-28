@@ -159,7 +159,11 @@ const Contact = () => {
                 type="text"
                 name="empresa"
                 label="Empresa"
-                variant="bordered"  />
+                variant="bordered"
+                onChange={(e: any) => {
+                  handleChange(e);
+                }}
+                />
             </div>
             <div className="flex w-full flex-wrap md:flex-nowrap gap-7 mb-5">
               <Input
