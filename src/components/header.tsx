@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link as UILink, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/react";
 import styles from '../components/header.module.css';
@@ -10,8 +10,18 @@ const Header = () => {
 	const scrollPosition = useScrollPosition()
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isScroll250, setIsScroll250] = React.useState(true);
-  const pathName = window.location.pathname;
-  const pathHash = window.location.hash;
+
+  const [pathName, setPathName] = useState('');
+  const [pathHash, setPathHash] = useState('');
+  // const pathName = window.location.pathname;
+  // const pathHash = window.location.hash;
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setPathName(window.location.pathname);
+      setPathHash(window.location.hash);
+    }
+  }, []);
 
 	const menuItems = [
     {
@@ -33,13 +43,16 @@ const Header = () => {
 	];
 
   function handleScroll (e:number) {
-    // console.log("scroll", pathName);
+    if (typeof window !== 'undefined') {
+      setPathName(window.location.pathname);
+      setPathHash(window.location.hash);
+    }
     e >= 250 ? setIsScroll250(false) : setIsScroll250(true)
   }
 
 	return (
 
-<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? !isMenuOpen ? styles.transparent : styles.navbarDarker : !isMenuOpen ? styles.navbarDark : styles.navbarDarker, wrapper: styles.wrapper + ' container px-5 md:px-10 xl:px-0 m-auto ', item: styles.inactive, toggleIcon: isMenuOpen ? styles.menuClosedIcon: styles.menuOpenedIcon }} isBlurred={!isScroll250 && !isMenuOpen} className='header'>
+<Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen} onScrollPositionChange={(e)=> {handleScroll(e)}} classNames={{base: isScroll250 && pathName === "/" ? !isMenuOpen ? styles.transparent : styles.navbarDarker : !isMenuOpen ? styles.navbarDark : styles.navbarDarker, wrapper: styles.wrapper + ' container px-5 md:px-10 xl:px-0 m-auto ', toggleIcon: isMenuOpen ? styles.menuClosedIcon: styles.menuOpenedIcon }} isBlurred={!isScroll250 && !isMenuOpen} className='header infinity'>
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -53,7 +66,7 @@ const Header = () => {
       <NavbarContent className="hidden lg:flex gap-4" justify="end">
 	  {menuItems.map((item, index) => (
         <NavbarItem key={`${item.name}-${index}`}>
-          <UILink isBlock href={item.path} className={pathHash===item.path.replace("/", "") || pathName === item.path ? styles.active : styles.inactive + ' text-white transition-all'}>
+          <UILink isBlock href={item.path} className={pathHash===item.path.replace("/", "") || pathName === item.path ? styles.active : styles.inactive + ' text-white transition-all ' + styles.navItem}>
           {item.name}
           </UILink>
         </NavbarItem>

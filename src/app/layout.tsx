@@ -22,7 +22,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 	return (
 		<html lang='es'>
 			<head>
-				<Script src='https://unpkg.com/akar-icons-fonts' />
+				{/* <Script src='https://unpkg.com/akar-icons-fonts' /> */}
 			</head>
 
 			<body className={inter.className}>
