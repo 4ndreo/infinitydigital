@@ -1,6 +1,6 @@
 'use client';
 import React, {useState} from "react";
-import {Button, Input, Textarea} from "@nextui-org/react";
+import {Button, Input, Textarea, Link} from "@nextui-org/react";
 import styles from '../components/contact.module.css';
 import { ToastContainer, toast } from "react-toastify";
 
@@ -127,7 +127,7 @@ const Contact = () => {
               
               <div className={styles.infoContain}>
               <h5 className={`${styles.infoName} ${styles.iconWhatsapp}`}>WhatsApp</h5>
-              <p className={styles.infoText}>+54 011 5490-6966</p>
+              <Link href="http://wa.me/+541154906966"><p className={styles.infoText}>+54 011 5490-6966</p></Link>
               </div>
               </li>
               <li>
