@@ -4,9 +4,9 @@ import nodemailer from 'nodemailer';
 import {smtpEmail} from '@/utils/nodemailer';
 import {Email} from '@/components/email';
 import fs from 'fs';
-import { google } from 'googleapis';
+import {google} from 'googleapis';
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req, res) {
 	const body = await req.json();
 	const {nombre, email, message} = body;
 
@@ -35,25 +35,25 @@ export async function POST(req: NextRequest, res: NextResponse) {
 		process.env.OAUTH_CLIENTID,
 		process.env.OAUTH_CLIENT_SECRET,
 		process.env.REDIRECT_URI
-	  );
+	);
 
-	  oAuth2Client.setCredentials({ refresh_token: process.env.OAUTH_REFRESH_TOKEN });
+	oAuth2Client.setCredentials({refresh_token: process.env.OAUTH_REFRESH_TOKEN});
 
-  const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
-  const transporterInstance = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      type: "OAuth2",
-      user: process.env.GOOGLE_EMAIL,
-      clientId: process.env.OAUTH_CLIENTID,
-      clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-      accessToken: ACCESS_TOKEN,
-    },
-    tls: {
-      rejectUnauthorized: true,
-    },
-  });
+	const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
+	const transporterInstance = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+			type: 'OAuth2',
+			user: process.env.GOOGLE_EMAIL,
+			clientId: process.env.OAUTH_CLIENTID,
+			clientSecret: process.env.OAUTH_CLIENT_SECRET,
+			refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+			accessToken: ACCESS_TOKEN,
+		},
+		tls: {
+			rejectUnauthorized: true,
+		},
+	});
 
 	// const transporterInstance = nodemailer.createTransport({
 	// 	host: 'smtp.gmail.com',
@@ -99,24 +99,23 @@ export async function POST(req: NextRequest, res: NextResponse) {
 		],
 	};
 
-  await new Promise((resolve, reject) => {
-    // verify connection configuration
-	
-    transporterInstance.verify(function (error, success) {
-        if (error) {
-            console.log(error);
-            reject(error);
-        } else {
-            console.log("Server is ready to take our messages");
-            resolve(success);
-        }
-    });
-});
+	await new Promise((resolve, reject) => {
+		// verify connection configuration
+
+		transporterInstance.verify(function (error, success) {
+			if (error) {
+				console.log(error);
+				reject(error);
+			} else {
+				console.log('Server is ready to take our messages');
+				resolve(success);
+			}
+		});
+	});
 
 	await new Promise((resolve, reject) => {
 		// send mail
 		transporterInstance.sendMail(mailOptions, (err, info) => {
-      
 			if (err) {
 				console.error(err);
 				reject(err);
@@ -132,10 +131,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
 			if (err) {
 				console.error(err);
 				reject(err);
-        console.error('Error al enviar el correo:', err);
+				console.error('Error al enviar el correo:', err);
 			} else {
 				// console.log(info);
-        console.log('Correo enviado con éxito');
+				console.log('Correo enviado con éxito');
 				resolve(info);
 			}
 		});
