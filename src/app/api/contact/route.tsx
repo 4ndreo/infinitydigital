@@ -25,7 +25,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 			name={nombre}
 			email={email}
 			message={
-				'Muchas gracias por escibirnos. Estaremos contactándote a la brevedad para brindarte más información.'
+				'Muchas gracias por escribirnos. Estaremos contactándote a la brevedad para brindarte más información.'
 			}
 		/>
 	);
@@ -33,6 +33,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 	const transporterInstance = nodemailer.createTransport({
 		host: 'smtp.gmail.com',
 		port: 587,
+		service: 'gmail',
 		// secure: true,
 		auth: {
 			// type: 'OAuth2',
