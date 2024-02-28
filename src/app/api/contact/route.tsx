@@ -4,6 +4,7 @@ import nodemailer from 'nodemailer';
 import {smtpEmail} from '@/utils/nodemailer';
 import {Email} from '@/components/email';
 import fs from 'fs';
+import { google } from 'googleapis';
 
 export async function POST(req: NextRequest, res: NextResponse) {
 	const body = await req.json();
@@ -30,21 +31,44 @@ export async function POST(req: NextRequest, res: NextResponse) {
 		/>
 	);
 
-	const transporterInstance = nodemailer.createTransport({
-		host: 'smtp.gmail.com',
-		port: 587,
-		service: 'gmail',
-		// secure: true,
-		auth: {
-			// type: 'OAuth2',
-			// user: process.env.MAIL_USERNAME,
-			user: process.env.GOOGLE_EMAIL,
-			pass: process.env.GOOGLE_PASSWORD,
-			// clientId: process.env.OAUTH_CLIENTID,
-			// clientSecret: process.env.OAUTH_CLIENT_SECRET,
-			// refreshToken: process.env.OAUTH_REFRESH_TOKEN
-		},
-	});
+	const oAuth2Client = new google.auth.OAuth2(
+		process.env.OAUTH_CLIENTID,
+		process.env.OAUTH_CLIENT_SECRET,
+		process.env.REDIRECT_URI
+	  );
+
+	  oAuth2Client.setCredentials({ refresh_token: process.env.OAUTH_REFRESH_TOKEN });
+
+  const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
+  const transporterInstance = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.GOOGLE_EMAIL,
+      clientId: process.env.OAUTH_CLIENTID,
+      clientSecret: process.env.OAUTH_CLIENT_SECRET,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+      accessToken: ACCESS_TOKEN,
+    },
+    tls: {
+      rejectUnauthorized: true,
+    },
+  });
+
+	// const transporterInstance = nodemailer.createTransport({
+	// 	host: 'smtp.gmail.com',
+	// 	port: 587,
+	// 	secure: true,
+	// 	auth: {
+	// 		type: 'OAuth2',
+	// 		// user: process.env.MAIL_USERNAME,
+	// 		// user: process.env.GOOGLE_EMAIL,
+	// 		// pass: process.env.GOOGLE_PASSWORD,
+	// 		clientId: process.env.OAUTH_CLIENTID,
+	// 		clientSecret: process.env.OAUTH_CLIENT_SECRET,
+	// 		refreshToken: process.env.OAUTH_REFRESH_TOKEN
+	// 	},
+	// });
 
 	const mailOptions = {
 		from: process.env.GOOGLE_EMAIL,
@@ -77,6 +101,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   await new Promise((resolve, reject) => {
     // verify connection configuration
+	
     transporterInstance.verify(function (error, success) {
         if (error) {
             console.log(error);
