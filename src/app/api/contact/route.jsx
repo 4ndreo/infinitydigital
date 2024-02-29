@@ -75,13 +75,13 @@ export async function POST(req, res) {
 		to: process.env.GOOGLE_EMAIL,
 		subject: 'Infinity Digital - Nuevo mensaje de contacto',
 		html: emailHtml,
-		// attachments: [
-		// 	{
-		// 		filename: 'logo',
-		// 		path: './public/img/logos/logo-colores.png',
-		// 		cid: '1234', //same cid value as in the html img src
-		// 	},
-		// ],
+		attachments: [
+			{
+				filename: 'logo',
+				path: './public/img/logos/logo-colores.png',
+				cid: '1234', //same cid value as in the html img src
+			},
+		],
 	};
 
 	const mailClientOptions = {
@@ -89,14 +89,13 @@ export async function POST(req, res) {
 		to: email,
 		subject: 'Infinity Digital - Consulta recibida con éxito',
 		html: emailHtmlClient,
-		// attachments: [
-		// 	{
-		// 		filename: 'logo',
-		// 		path: './public/img/logos/logo-colores.png',
-		// 		// content: fs.createReadStream('./public/img/logos/infinity-digital-logo-cropped.svg'),
-		// 		cid: '1234', //same cid value as in the html img src
-		// 	},
-		// ],
+		attachments: [
+			{
+				filename: 'logo',
+				path: './public/img/logos/logo-colores.png',
+				cid: '1234', //same cid value as in the html img src
+			},
+		],
 	};
 
 	await new Promise((resolve, reject) => {
