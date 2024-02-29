@@ -78,7 +78,7 @@ export async function POST(req, res) {
 		attachments: [
 			{
 				filename: 'logo',
-				path: './public/img/logos/logo-colores.png',
+				path: 'src/utils/img/logo-colores.png',
 				cid: '1234', //same cid value as in the html img src
 			},
 		],
@@ -92,7 +92,7 @@ export async function POST(req, res) {
 		attachments: [
 			{
 				filename: 'logo',
-				path: './public/img/logos/logo-colores.png',
+				path: 'src/utils/img/logo-colores.png',
 				cid: '1234', //same cid value as in the html img src
 			},
 		],
