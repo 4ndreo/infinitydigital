@@ -4,6 +4,7 @@ import {Button, Input, Textarea, Select, SelectItem} from '@nextui-org/react';
 import styles from '@/app/plans/[type]/page.module.css';
 
 import { ToastContainer, toast } from "react-toastify";
+import Loader from '@/components/loader';
 
 export default function Plans({params}: any) {
 	const [isLoading, setIsLoading] = useState(false);
@@ -325,8 +326,8 @@ export default function Plans({params}: any) {
 									/>
 								</div>
 
-									<Button disabled={!formIsValid()} className={styles.bttn + ' w-full mb-12'} onClick={() =>handleSubmit()}>
-										Enviar
+									<Button disabled={!formIsValid() || isLoading} className={styles.bttn + ' w-full mb-12'} onClick={() =>handleSubmit()}>
+									{isLoading ? <Loader /> : 'Enviar'}
 									</Button>
 							</>
 						) : null}

@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {Button, Input, Textarea, Link} from "@nextui-org/react";
 import styles from '../components/contact.module.css';
 import { ToastContainer, toast } from "react-toastify";
+import Loader from "./loader";
 
 const Contact = () => {
 
@@ -205,8 +206,8 @@ const Contact = () => {
               onChange={(e: any) => {
                 handleChange(e);
               }} />
-            <Button className={styles.bttn+" h-12 rounded-lg w-full"} disabled={!formIsValid()} onClick={()=>handleSubmit()}>
-              Enviar
+            <Button className={styles.bttn+" h-12 rounded-lg w-full"} disabled={!formIsValid() || isLoading} onClick={()=>handleSubmit()}>
+              {isLoading ? <Loader /> : 'Enviar'}
             </Button>
             </form>
           </div>
