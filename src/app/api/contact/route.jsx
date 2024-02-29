@@ -56,21 +56,6 @@ export async function POST(req, res) {
 		},
 	});
 
-	// const transporterInstance = nodemailer.createTransport({
-	// 	host: 'smtp.gmail.com',
-	// 	port: 587,
-	// 	secure: true,
-	// 	auth: {
-	// 		type: 'OAuth2',
-	// 		// user: process.env.MAIL_USERNAME,
-	// 		// user: process.env.GOOGLE_EMAIL,
-	// 		// pass: process.env.GOOGLE_PASSWORD,
-	// 		clientId: process.env.OAUTH_CLIENTID,
-	// 		clientSecret: process.env.OAUTH_CLIENT_SECRET,
-	// 		refreshToken: process.env.OAUTH_REFRESH_TOKEN
-	// 	},
-	// });
-
 	const mailOptions = {
 		from: process.env.GOOGLE_EMAIL,
 		to: process.env.GOOGLE_EMAIL,
@@ -79,7 +64,7 @@ export async function POST(req, res) {
 		attachments: [
 			{
 				filename: 'logo',
-				path: __dirname + '/../../../../../static/media/logo_colores_xyz.15f57cd1.png',
+				path: 'https://res.cloudinary.com/dpsdqgh0g/image/upload/f_auto,q_auto/logo',
 				cid: '1234', //same cid value as in the html img src
 			},
 		],
@@ -93,7 +78,7 @@ export async function POST(req, res) {
 		attachments: [
 			{
 				filename: 'logo',
-				path: __dirname + '/../../../../../static/media/logo_colores.15f57cd1.png',
+				path: 'https://res.cloudinary.com/dpsdqgh0g/image/upload/f_auto,q_auto/logo',
 				cid: '1234', //same cid value as in the html img src
 			},
 		],
@@ -139,12 +124,5 @@ export async function POST(req, res) {
 			}
 		});
 	});
-	// try {
-	// 	await transporterInstance.sendMail(mailOptions);
-	// 	await transporterInstance.sendMail(mailClientOptions);
-	// } catch (error) {
-	// 	return new Response('Error al enviar el correo', {status: 500});
-	// }
-
 	return new Response('OK');
 }
