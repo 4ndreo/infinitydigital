@@ -5,6 +5,7 @@ import {smtpEmail} from '@/utils/nodemailer';
 import {Email} from '@/components/email';
 import fs from 'fs';
 import {google} from 'googleapis';
+import logo from '@/utils/img/logo_colores.png';
 
 export async function POST(req, res) {
 	const body = await req.json();
@@ -78,7 +79,7 @@ export async function POST(req, res) {
 		attachments: [
 			{
 				filename: 'logo',
-				path: '/img/logos/logo-colores.png',
+				path: __dirname + '../../../../../static/media/logo_colores_xyz.15f57cd1.png',
 				cid: '1234', //same cid value as in the html img src
 			},
 		],
@@ -92,7 +93,7 @@ export async function POST(req, res) {
 		attachments: [
 			{
 				filename: 'logo',
-				path: '/img/logos/logo-colores.png',
+				path: __dirname + '../../../../../static/media/logo_colores.15f57cd1.png',
 				cid: '1234', //same cid value as in the html img src
 			},
 		],
