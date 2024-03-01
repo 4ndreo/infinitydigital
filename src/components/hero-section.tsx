@@ -9,7 +9,7 @@ const HeroSection = () => {
 			id='home'>
 			<div className='container m-auto md:m-0 md:ms-auto h-full md:w-5/12 flex items-center'>
 				<div className='text-center md:text-left lg:w-full w-[900px]'>
-					<h1 className='title-font 2xl:text-6xl xl:text-5xl md:text-4xl text-3xl mb-10 lg:mb-20 tracking-tight font-bold text-white sm:leading-snug'>
+					<h1 className='title-font xl:text-5xl md:text-4xl text-3xl mb-10 lg:mb-20 tracking-tight font-bold text-white sm:leading-snug max-w-xl'>
 						<span className='block mb-5 lg:mb-10'>Innovamos en IT</span>
 						<span className='block'>
 							Creando Oportunidades{' '}
