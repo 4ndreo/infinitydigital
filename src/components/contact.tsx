@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button, Input, Textarea, Link} from "@nextui-org/react";
 import styles from '../components/contact.module.css';
 import { ToastContainer, toast } from "react-toastify";
@@ -8,6 +8,7 @@ import Loader from "./loader";
 const Contact = () => {
 
   const [isLoading, setIsLoading] = useState(false);
+  const [contactForm, setContactForm]: any = useState(false);
   const [values, setValues] = React.useState({
 		nombre: '',
 		empresa: '',
@@ -15,6 +16,8 @@ const Contact = () => {
 		telefono: '',
 		consulta: '',
 	});
+
+  // let contactForm: any;
 
   async function handleSubmit() {
 		try {
@@ -39,21 +42,21 @@ const Contact = () => {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({email: values.email, nombre: values.nombre, message}),
-			});
+      }).then((res) => {
+        // toast.error('Error al enviar el formulario. Intente nuevamente.');
+        // console.error('Error al enviar el email:', error);
+        if(res.ok) {
+          toast.success('Formulario enviado con éxito');
+          resetForm();
+        } else {
+          toast.error('Error al enviar el formulario. Intente nuevamente.');
+        }
+      }).finally(()=> {
+        setIsLoading(false);
+      }) 
 
-			// Reset the form
-			// resetForm();
-
-			// Show success message or redirect to a thank you page
-			console.log('El email se envio con éxito!');
 		} catch (error) {
-			// Handle error
       toast.error('Error al enviar el formulario. Intente nuevamente.');
-			console.error('Error al enviar el email:', error);
-		} finally {
-			// setSubmitting(false);
-			toast.success('Formulario enviado con éxito');
-			setIsLoading(false);
 		}
 	}
 
@@ -83,6 +86,10 @@ const Contact = () => {
 		let regExp = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 		return regExp.test(param);
 	}
+
+  function resetForm() {
+    contactForm.reset();
+  }
 
   return (
     <section className="body-font relative" id="contacto">
@@ -140,7 +147,7 @@ const Contact = () => {
             </ul>
           </div>
           <div className={styles.form + " w-full lg:w-[50%] border-gray-300 shadow rounded-lg mb-5"}>
-            <form className="my-9 px-7" autoComplete="off">
+            <form ref={(el) => setContactForm(el)} className="my-9 px-7" autoComplete="off">
             <div className="flex w-full flex-wrap md:flex-nowrap gap-7 mb-5">
               <Input 
                 type="text"
