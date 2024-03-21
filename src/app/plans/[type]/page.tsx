@@ -160,7 +160,7 @@ export default function Plans({params}: any) {
         theme="dark"
       />
 			<div className='max-w-7xl m-auto h-full md:flex md:justify-between  px-10'>
-				<div className='mt-32 w-full block md:max-w-[35%] md:flex'>
+				<div className='mt-10 md:mt-32 w-full block md:max-w-[35%] md:flex'>
 					<div className={styles[bgType] +' pt-56 sm:pt-80 md:pt-0 md:pb-64 lg:pb-96 h-fit'}>
 						<h1 className={styles.title+" mb-8"}>Elegiste el plan {type}</h1>
 						<p className={styles.text}>

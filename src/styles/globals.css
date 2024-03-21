@@ -15,8 +15,10 @@ html {
 .shake-left-right:hover{animation:shake-left-right 0.8s linear both} @keyframes shake-left-right{0%,100%{transform:rotate(0deg);transform-origin:50% 50%}10%{transform:rotate(8deg)}20%,40%,60%{transform:rotate(-10deg)}30%,50%,70%{transform:rotate(10deg)}80%{transform:rotate(-8deg)}90%{transform:rotate(8deg)}}
 .rotate-scale-up:hover{animation:rotate-scale-up 3s linear both} @keyframes rotate-scale-up{0%{transform:scale(1) rotateZ(0)}50%{transform:scale(2) rotateZ(90deg)}100%{transform:scale(1) rotateZ(360deg)}}
 
+@media screen and (min-width: 768px) {
 main {
   margin-top: -4rem;
+}
 }
 
 .layout {

@@ -41,7 +41,7 @@ export default function Company() {
 
     return (
         <main>
-            <div className="max-w-7xl px-10 m-auto mt-24 lg:mt-32 text-textBlack">
+            <div className="max-w-7xl px-10 m-auto mt-10 md:mt-24 lg:mt-32 text-textBlack">
                 <div className={styles.bgEmpresa+" pt-52 lg:pt-0 mb-12 lg:mb-24 lg:pb-24"}>
                     <h1 className="text-4xl lg:text-[5rem] font-bold mb-4 lg:mb-16 mt-6 lg:mt-0">Quiénes somos</h1>
                     <p className="lg:w-2/5 text-[1.125rem]"><span className="block">Somos una consultora joven con un equipo multidisciplinario, experimentado y con gran potencial.</span>
