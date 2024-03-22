@@ -126,7 +126,7 @@ const Contact = () => {
               <li className="mb-6">
               <div className={styles.infoContain}>
               <h5 className={`${styles.infoName} ${styles.iconMail}`}>E-mail</h5>
-              <p className={styles.infoText}>info.infinitydigital@gmail.com</p>
+              <Link href="mailto:info@infinitydigital.com.ar" className={styles.infoText}>info@infinitydigital.com.ar</Link>
               </div>
               </li>
               <li className="mb-6">
@@ -139,7 +139,7 @@ const Contact = () => {
               <li>
               <div className={styles.infoContain}>
               <h5 className={`${styles.infoName} ${styles.iconInstagram}`}>Instagram</h5>
-              <p className={styles.infoText}>@infinitydigital.tech</p>
+              <Link href="https://www.instagram.com/infinitydigital.tech/" className={styles.infoText}>@infinitydigital.tech</Link>
               </div>
               </li>
             </ul>
