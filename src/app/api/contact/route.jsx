@@ -1,15 +1,10 @@
-import {NextRequest, NextResponse} from 'next/server';
-import {render} from '@react-email/components';
+import { render } from '@react-email/components';
 import nodemailer from 'nodemailer';
-import {smtpEmail} from '@/utils/nodemailer';
-import {Email} from '@/components/email';
-import fs from 'fs';
-import {google} from 'googleapis';
-import logo from '@/utils/img/logo_colores.png';
+import { Email } from '@/components/email';
 
 export async function POST(req, res) {
 	const body = await req.json();
-	const {nombre, email, message} = body;
+	const { nombre, email, message } = body;
 
 	const emailHtml = render(
 		<Email
@@ -31,34 +26,20 @@ export async function POST(req, res) {
 			}
 		/>
 	);
-
-	const oAuth2Client = new google.auth.OAuth2(
-		process.env.OAUTH_CLIENTID,
-		process.env.OAUTH_CLIENT_SECRET,
-		process.env.REDIRECT_URI
-	);
-
-	oAuth2Client.setCredentials({refresh_token: process.env.OAUTH_REFRESH_TOKEN});
-
-	const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
+	
 	const transporterInstance = nodemailer.createTransport({
-		service: 'gmail',
+		host: process.env.SMTP_HOST,
+		port: process.env.SMTP_PORT,
+		secure: true,
 		auth: {
-			type: 'OAuth2',
-			user: process.env.GOOGLE_EMAIL,
-			clientId: process.env.OAUTH_CLIENTID,
-			clientSecret: process.env.OAUTH_CLIENT_SECRET,
-			refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-			accessToken: ACCESS_TOKEN,
-		},
-		tls: {
-			rejectUnauthorized: true,
+			user: process.env.SMTP_EMAIL,
+			pass: process.env.SMTP_PASSWORD,
 		},
 	});
 
 	const mailOptions = {
-		from: process.env.GOOGLE_EMAIL,
-		to: process.env.GOOGLE_EMAIL,
+		from: process.env.SMTP_EMAIL,
+		to: process.env.SMTP_EMAIL,
 		subject: 'Infinity Digital - Nuevo mensaje de contacto',
 		html: emailHtml,
 		attachments: [
@@ -71,7 +52,7 @@ export async function POST(req, res) {
 	};
 
 	const mailClientOptions = {
-		from: process.env.GOOGLE_EMAIL,
+		from: process.env.SMTP_EMAIL,
 		to: email,
 		subject: 'Infinity Digital - Consulta recibida con éxito',
 		html: emailHtmlClient,
@@ -84,45 +65,39 @@ export async function POST(req, res) {
 		],
 	};
 
+	// verify connection configuration
 	await new Promise((resolve, reject) => {
-		// verify connection configuration
-
 		transporterInstance.verify(function (error, success) {
 			if (error) {
-				console.log(error);
 				reject(error);
 			} else {
-				console.log('Server is ready to take our messages');
 				resolve(success);
 			}
 		});
 	});
 
+	// send internal mail
 	await new Promise((resolve, reject) => {
-		// send mail
 		transporterInstance.sendMail(mailOptions, (err, info) => {
 			if (err) {
-				console.error(err);
 				reject(err);
 			} else {
-				console.log(info);
 				resolve(info);
 			}
 		});
 	});
+
+	// send client mail
 	await new Promise((resolve, reject) => {
 		// send mail
 		transporterInstance.sendMail(mailClientOptions, (err, info) => {
 			if (err) {
-				console.error(err);
 				reject(err);
-				console.error('Error al enviar el correo:', err);
 			} else {
-				// console.log(info);
-				console.log('Correo enviado con éxito');
 				resolve(info);
 			}
 		});
 	});
 	return new Response('OK');
+	
 }

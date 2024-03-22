@@ -35,7 +35,6 @@ const Contact = () => {
 
 
 			setIsLoading(true);
-			// Send email using Nodemailer
 			await fetch('/api/contact', {
 				method: 'POST',
 				headers: {
@@ -43,8 +42,6 @@ const Contact = () => {
 				},
 				body: JSON.stringify({email: values.email, nombre: values.nombre, message}),
       }).then((res) => {
-        // toast.error('Error al enviar el formulario. Intente nuevamente.');
-        // console.error('Error al enviar el email:', error);
         if(res.ok) {
           toast.success('Formulario enviado con éxito');
           resetForm();
@@ -89,6 +86,7 @@ const Contact = () => {
 
   function resetForm() {
     contactForm.reset();
+    setValues({ nombre: '', empresa: '', email: '', telefono: '', consulta: '' });
   }
 
   return (

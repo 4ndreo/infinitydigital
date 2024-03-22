@@ -8,6 +8,7 @@ import Loader from '@/components/loader';
 
 export default function Plans({params}: any) {
 	const [isLoading, setIsLoading] = useState(false);
+	const [contactForm, setContactForm]: any = useState(false);
 	const rubros = ['Agricultura y ganadería',
 		'Alimentos y bebidas',
 		'Automotriz',
@@ -67,28 +68,24 @@ export default function Plans({params}: any) {
 			;
 
 			setIsLoading(true);
-			// Send email using Nodemailer
 			await fetch('/api/contact', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({email: values.email, nombre: values.nombre, message}),
-			});
-
-			// Reset the form
-			// resetForm();
-
-			// Show success message or redirect to a thank you page
-			console.log('El email se envio con éxito!');
+			}).then((res) => {
+				if(res.ok) {
+				  toast.success('Formulario enviado con éxito');
+				  resetForm();
+				} else {
+				  toast.error('Error al enviar el formulario. Intente nuevamente.');
+				}
+			  }).finally(()=> {
+				setIsLoading(false);
+			  }) 
 		} catch (error) {
-			// Handle error
-			console.error('Error al enviar el email:', error);
 			toast.error('Error al enviar el formulario. Intente nuevamente.');
-		} finally {
-			// setSubmitting(false);
-			toast.success('Formulario enviado con éxito');
-			setIsLoading(false);
 		}
 	}
 
@@ -127,6 +124,17 @@ export default function Plans({params}: any) {
 		switchBg();
 	}, []);
 
+	function resetForm() {
+		contactForm.reset();
+		setValues({empresa: '',
+		nEmpleados: '',
+		rubro: '',
+		servicio: [''],
+		objetivo: '',
+		nombre: '',
+		telefono: '',
+		email: '',});
+	  }
 
 	function isString(param: string): boolean {
 		// console.log('parametro', param);
@@ -170,7 +178,7 @@ export default function Plans({params}: any) {
 					</div>
 				</div>
 				<div className='block w-full md:w-[45%] mt-32'>
-					<form autoComplete="off">
+					<form ref={(el) => setContactForm(el)} autoComplete="off">
 						<h2 className={styles.sectionTitle}>Empresa</h2>
 						<div className={styles.sectionForm + ' transition-all'}>
 							<div className='flex w-full flex-wrap md:flex-nowrap gap-10 mb-6'>
